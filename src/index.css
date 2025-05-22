@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  list-style: none;
+}
+
+
+:root {
+  --primary-dark: #1a4f00; /* red-600 */
+  --primary-dark-hover: #1c3600; /* red-600 */
+  --primary-lighter: #b6ff9d; /* yellow-300 */
+  --primary-lighter-hover: #74d24e; /* yellow-300 */
+  --primary-light: #f6ffc4; /* green-400 */
+  --primary-light-hover: #e1ff4e; /* green-400 */
+}
+
+ 
