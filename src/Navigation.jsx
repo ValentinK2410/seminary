@@ -67,6 +67,7 @@ const Navigation = () => {
               onClick={() => scrollToSection(id)}
               style={{ cursor: 'pointer' }}
             >
+           
               {label}
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-white transition-transform transform ${
