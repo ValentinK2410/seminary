@@ -1,11 +1,7 @@
 footer {
   /* background-color: var(--primary-dark); */
-  background-color: rgb(30, 30, 30);
 }
  
- 
- 
-
 footer .footer_icons {
   color: var(--primary-light);
 } 

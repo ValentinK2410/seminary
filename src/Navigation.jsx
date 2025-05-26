@@ -1,14 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { HiMenu, HiX } from "react-icons/hi";  
+import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 
-import './navigation.css'; 
+import "./navigation.css";
 
 const Navigation = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const [scrolledTo100vh, setScrolledTo100vh] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= window.innerHeight) {
+        setScrolledTo100vh(true);
+      } else {
+        setScrolledTo100vh(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((prev) => !prev);
@@ -36,13 +52,15 @@ const Navigation = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50   text-white"
+      className={`fixed top-0 left-0 w-full z-50 border-b text-white transition-all duration-500 ease-in-out ${
+        scrolledTo100vh ? "bg-gray-800 shadow-md" : "bg-transparent"
+      }`}
       onClick={closeMenus}
     >
-   
-      <nav className=" mx-auto flex items-center justify-between px-4 py-3">
+
+      <nav className="mx-auto flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-4 z-10">
-          <div onClick={() => scrollToSection('home')}>
+          <div onClick={() => scrollToSection("home")}>
             <svg width="48" height="24" xmlns="http://www.w3.org/2000/svg">
               <text
                 x="4"
@@ -65,9 +83,8 @@ const Navigation = () => {
               key={id}
               className={`relative group px-2 py-1 transition-all`}
               onClick={() => scrollToSection(id)}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: "pointer" }}
             >
-           
               {label}
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-white transition-transform transform ${
@@ -87,7 +104,7 @@ const Navigation = () => {
           className="lg:hidden text-white"
           aria-label={mobileMenuOpen ? "Sluit menu" : "Open menu"}
         >
-           <HiMenu size={28} />
+          <HiMenu size={28} />
         </button>
       </nav>
 
@@ -119,7 +136,7 @@ const Navigation = () => {
                 key={id}
                 className={`block text-xl px-4 py-3 rounded-lg transition-all duration-200 hover:bg-gray-700 hover:scale-105 focus:ring-2 focus:ring-white uppercase tracking-wide`}
                 onClick={() => scrollToSection(id)}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: "pointer" }}
               >
                 {label}
               </div>
