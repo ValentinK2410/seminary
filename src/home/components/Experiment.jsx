@@ -14,7 +14,7 @@ const Experiment = () => {
         />
       </picture>
       <figure>
-        <h1 className=' mb-4 text-2xl md:text-4xl xl:text-6xl font-bold'>Семинарий</h1>
+        <h1 className=' mb-4 text-2xl md:text-4xl xl:text-4xl font-bold'>Семинарий</h1>
         <figcaption>
            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quisquam ipsa dolor.
         </figcaption>

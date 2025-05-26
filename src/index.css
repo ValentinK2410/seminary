@@ -5,6 +5,14 @@
 @tailwind utilities;
 
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
 
 * {
   box-sizing: border-box;
