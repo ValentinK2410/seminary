@@ -1,6 +1,6 @@
 
-import { Button } from '../compoLibrary/Button'
-import LightBulb from '../images/LightBulb'
+import { Button } from '../componentLibrary/Button'
+import { LightBulb } from '../images/LightBulb'
 import mainPerson from '../images/mainPerson.png'
 
 export const Banner = () => {
@@ -17,7 +17,7 @@ export const Banner = () => {
           <h3 className='text-2xl sm:text-4xl xl:text-5xl text-indigo-900  max-w-[20ch]'>
             <span className='font-semibold '>От призвания к</span> созиданию церкви
           </h3>
-          <p className='text-zinc-500 max-w-[60ch]'>
+          <p className='text-zinc-600 max-w-[60ch]'>
             Богословская семинария МБС предлагает образовательные возможности, которые помогут вам быть эффективными в вашем призвании и служении в церкви.
           </p>
           <Button className=''>
