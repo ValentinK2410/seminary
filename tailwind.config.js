@@ -12,6 +12,9 @@ module.exports = {
         xl: '1280px', // Larger desktop screens
         '2xl': '1536px', // Very large desktop screens
       },
+       colors: {
+        'indigo-25': '#F8F6FE', 
+      },
     },
   },
   variants: {},
