@@ -1,5 +1,5 @@
-import Navigation from './navigation/Navigation';
-import { Footer } from './footer/Footer';
+import Navigation from './features/navigation/Navigation';
+import { Footer } from './features/footer/Footer';
 
 const Layout = ({ children }) => {
   return (

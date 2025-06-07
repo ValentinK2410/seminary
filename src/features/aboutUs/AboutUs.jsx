@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '../componentLibrary/Button'
-import { LightBulb } from '../images/LightBulb'
+import { MainButton } from '../../componentLibrary/MainButton'
+import { LightBulb } from '../../images/LightBulb'
 
 export const AboutUs = () => {
   return (
@@ -23,9 +23,9 @@ export const AboutUs = () => {
                 <p className='text-zinc-600'>
           ПРИСОЕДИНЯЙТЕСЬ К МБС!
         </p>
-        <Button className='w-fit'>
+        <MainButton className='w-fit'>
           Стать студентом МБС
-        </Button>
+        </MainButton>
       </div>
     </section>
   )

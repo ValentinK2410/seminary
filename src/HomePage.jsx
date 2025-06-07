@@ -1,6 +1,6 @@
 
-import { AboutUs } from './aboutUs/AboutUs';
-import { Banner } from './banner/Banner';
+import { AboutUs } from './features/aboutUs/AboutUs';
+import { Banner } from './features/banner/Banner';
 import Layout from './Layout';
 
 function HomePage() {

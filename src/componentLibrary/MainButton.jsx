@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Button = ({ onClick, children, className = '' }) => {
+export const MainButton = ({ onClick, children, className = '' }) => {
   return (
     <button
       className={`
