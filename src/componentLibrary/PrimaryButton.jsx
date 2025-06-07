@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const PrimaryButton = ({ onClick, children, className = '' }) => {
   return (
     <button
