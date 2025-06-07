@@ -1,5 +1,5 @@
 
-import { Button } from '../compoLib/Button'
+import { Button } from '../compoLibrary/Button'
 import LightBulb from '../images/LightBulb'
 import mainPerson from '../images/mainPerson.png'
 
