@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const NavLink = () => {
+export const NavLink = ({name}) => {
   return (
     <li>
-        <a href="http://#">NavLink</a>
+        <a href="http://#">{name}</a>
     </li>
   )
 }

@@ -1,8 +1,19 @@
+import { i } from 'framer-motion/client';
+import { Category } from './components/Category';
+import { Logo } from './components/Logo'
+import { MainNav } from './components/MainNav';
+import { Search } from './components/Search';
+import { SignIn } from './components/SignIn';
 const Navigation = () => {
 
   return (
    <section>
     <div>Navigation</div>
+    <Logo />
+    <Category />
+    <MainNav />
+    <Search />
+    <SignIn />
    </section>
   );
 };
