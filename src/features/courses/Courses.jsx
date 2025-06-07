@@ -1,5 +1,3 @@
-import React from 'react'
-import { MainButton } from '../../componentLibrary/MainButton'
 import { LightBulb } from '../../images/LightBulb'
 
 export const Courses = () => {

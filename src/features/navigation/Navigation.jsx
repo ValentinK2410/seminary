@@ -1,20 +1,16 @@
-import { i } from 'framer-motion/client';
-import { Category } from './components/Category';
-import { Logo } from './components/Logo'
+import { Logo } from '../../images/Logo';
 import { MainNav } from './components/MainNav';
-import { Search } from './components/Search';
 import { SignIn } from './components/SignIn';
-const Navigation = () => {
+
+export const Navigation = () => {
 
   return (
-   <section>
-    <Logo />
-    <Category />
-    <MainNav />
-    <Search />
-    <SignIn />
+   <section className='px-6 flex items-center'>
+    <div className='w-full max-w-7xl mx-auto flex gap-5 justify-between items-center'>
+      <Logo />
+      <MainNav />
+      <SignIn />
+    </div>
    </section>
   );
 };
-
-export default Navigation;

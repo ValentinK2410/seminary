@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const LightBulb = () => {
   return (
     <div className='w-6 h-6'>

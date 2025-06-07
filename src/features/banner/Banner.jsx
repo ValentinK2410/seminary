@@ -1,5 +1,5 @@
 
-import { MainButton } from '../../componentLibrary/MainButton'
+import { PrimaryButton } from '../../componentLibrary/PrimaryButton'
 import { LightBulb } from '../../images/LightBulb'
 import mainPerson from '../../images/mainPerson.png'
 
@@ -21,9 +21,9 @@ export const Banner = () => {
           <p className='text-zinc-600 max-w-[60ch]'>
             Богословская семинария МБС предлагает образовательные возможности, которые помогут вам быть эффективными в вашем призвании и служении в церкви.
           </p>
-          <MainButton className=''>
-            Просмотреть все курсы 
-          </MainButton>
+          <PrimaryButton className=''>
+            Просмотреть все курсы <span className="ml-2 transition-colors duration-200">→</span>
+          </PrimaryButton>
         </div>
       </div>
     </section>

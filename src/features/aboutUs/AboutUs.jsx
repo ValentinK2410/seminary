@@ -1,5 +1,5 @@
 import React from 'react'
-import { MainButton } from '../../componentLibrary/MainButton'
+import { PrimaryButton } from '../../componentLibrary/PrimaryButton'
 import { LightBulb } from '../../images/LightBulb'
 
 export const AboutUs = () => {
@@ -23,9 +23,9 @@ export const AboutUs = () => {
                 <p className='text-zinc-600'>
           ПРИСОЕДИНЯЙТЕСЬ К МБС!
         </p>
-        <MainButton className='w-fit'>
-          Стать студентом МБС
-        </MainButton>
+        <PrimaryButton className='w-fit'>
+          Стать студентом МБС <span className="ml-2 transition-colors duration-200">→</span>
+        </PrimaryButton>
       </div>
     </section>
   )

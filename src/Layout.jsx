@@ -1,4 +1,4 @@
-import Navigation from './features/navigation/Navigation';
+import { Navigation } from './features/navigation/Navigation';
 import { Footer } from './features/footer/Footer';
 
 const Layout = ({ children }) => {

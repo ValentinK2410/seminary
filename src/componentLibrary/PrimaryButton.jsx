@@ -1,31 +1,32 @@
 import React from 'react';
 
-export const MainButton = ({ onClick, children, className = '' }) => {
+export const PrimaryButton = ({ onClick, children, className = '' }) => {
   return (
     <button
       className={`
         bg-indigo-600 
+        hover:bg-white 
         text-white 
+        hover:text-indigo-600 
         border 
         border-indigo-600
+        hover:border-indigo-600
+        rounded-lg 
+
         px-5 
         py-2.5 
-        text-lg 
-        rounded-lg 
+        text-lg
+         
         flex 
         items-center 
         justify-between
         transition-colors 
         duration-200
-        hover:bg-white 
-        hover:text-indigo-600 
-        hover:border-indigo-600
         ${className}
       `}
       onClick={onClick}
     >
-      <span className="flex-1 text-left">{children}</span>
-      <span className="ml-2 transition-colors duration-200">→</span>
+      {children}
     </button>
   );
 };
