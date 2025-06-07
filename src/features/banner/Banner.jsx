@@ -5,12 +5,12 @@ import mainPerson from '../../images/mainPerson.png'
 
 export const Banner = () => {
   return (
-    <section className='px-6 pt-20 pb-10 md:pb-0 bg-indigo-25 flex'>
+    <section className='px-6 pt-40 sm:pt-10 pb-10 md:pb-0 bg-indigo-25 flex'>
       <div className='w-full max-w-7xl mx-auto flex justify-between items-center  flex-col  sm:flex-row-reverse gap-8 sm:gap-1'>
-        <div className='w-full'>
+        <div className='w-full hidden sm:block'>
           <img src={mainPerson} alt="main person" className='w-full' />
         </div>
-        <div className='w-full space-y-8'>
+        <div className='mt-10 sm:mt-0 w-full space-y-8'>
           <article className='text-indigo-600 flex gap-4'>
             <LightBulb />
             <p>Возрастайте вместе с МБС!</p>

@@ -19,8 +19,8 @@ export const Categories = () => {
         </div>
 
         {/* потом заменим */}
-        <div className='mt-20 mx-auto px-60'>
-            <article className='py-16 px-20  border border-dashed border-indigo-600 text-center text-4xl text-indigo-300 rounded-lg'>
+        <div className='mt-20 mx-auto px-10'>
+            <article className='py-16 px-5  border border-dashed border-indigo-600 text-center text-4xl text-indigo-300 rounded-lg'>
             KARUSEL
           </article>
         </div>

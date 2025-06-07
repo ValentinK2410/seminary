@@ -1,0 +1,5 @@
+@media (max-width: 350px) {
+  .logo_text h2 {
+    display: none;
+  }
+}
