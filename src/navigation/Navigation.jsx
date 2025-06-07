@@ -8,7 +8,6 @@ const Navigation = () => {
 
   return (
    <section>
-    <div>Navigation</div>
     <Logo />
     <Category />
     <MainNav />

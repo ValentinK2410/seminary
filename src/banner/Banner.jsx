@@ -6,10 +6,10 @@ import mainPerson from '../images/mainPerson.png'
 export const Banner = () => {
   return (
     <section className='px-6 pt-10 pb-10 md:pb-0 bg-indigo-25 flex'>
-      <div className='mx-auto flex justify-between items-center
- flex-col md:flex-row gap-10'>
-        <img src={mainPerson} alt="main person" className='lg:order-2' />
-        <div className='space-y-8 md:order-1'>
+      <div className='w-full max-w-7xl mx-auto flex justify-between items-center
+ flex-col  md:flex-row-reverse gap-16'>
+        <img src={mainPerson} alt="main person" className='' />
+        <div className=' space-y-8'>
           <article className='text-indigo-600 flex gap-4'>
             <LightBulb />
             <p>Возрастайте вместе с МБС!</p>
