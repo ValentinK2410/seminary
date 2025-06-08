@@ -1,0 +1,12 @@
+  .main_menu_items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+@media (min-width: 950px) {
+  .main_menu_items {
+    flex-direction: row;
+    gap: 8px;
+  }
+}

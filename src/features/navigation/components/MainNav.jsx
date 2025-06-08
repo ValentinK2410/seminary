@@ -1,9 +1,10 @@
 import { NavLink } from './NavLink';
+import './MainNav.css'
 
 export const MainNav = () => {
   return (
-    <nav aria-label="Main navigation h-full flex items-center justify-center " >
-      <ul className="w-fit mx-auto flex flex-col md:flex-row gap-10 md:gap-2">
+    <nav aria-label="Main navigation" className='h-full flex items-center justify-center' >
+      <ul className="main_menu_items w-fit mx-auto">
         <NavLink name="Ресурсы" />
         <NavLink name="Курсы" />
         <NavLink name="Программы" />

@@ -1,6 +1,6 @@
 export const Logo = () => {
   return (
-     <div className='py-2 w-full sm:w-fit text-indigo-600 flex items-center justify-between'>
+     <div className='py-2 w-fit text-indigo-600 flex items-center justify-between'>
       <article className="min-w-10">  
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 957.000000 836.000000"
