@@ -1,10 +1,11 @@
 import { Logo } from '../../images/Logo';
+import { PrimaryButton } from '../../componentLibrary/PrimaryButton';
 
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#f9f8ff] px-6">
-      <div className="w-full max-w-7xl mx-auto flex flex-wrap justify-betwee gap-8 py-[100px] px-4">
+    <footer className="bg-indigo-25 px-6 sm:px-20">
+      <div className="w-full max-w-7xl mx-auto flex flex-wrap justify-betwee gap-8 py-[100px]">
         {/* Первая колонка (33.33% на десктопе) */}
         <div className="w-full lg:w-[calc(33.33%-28px)]">
           <div className='flex gap-2 items-center mb-4 ml-[-12px]'>
@@ -74,16 +75,13 @@ export const Footer = () => {
               placeholder="Ваш email" 
               className='w-full px-4 py-2 border border-zinc-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent'
             />
-            <button 
-              type="submit" 
-              className='w-full bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition-colors'
-            >
+            <PrimaryButton className='w-full !justify-center'>
               Подписаться
-            </button>
+            </PrimaryButton>
           </form>
         </div>
       </div>
-      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-6 justify-between border-t border-zinc-200 p-6 text-left text-zinc-600">
+      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-6 justify-between border-t border-zinc-200 p-6 text-left text-zinc-600 px-6 sm:px-20">
         <p>&copy; {new Date().getFullYear()} Московская Богословская Семинария. Все права защищены.</p>
         <div class="social-copyright">
           <ul className="flex space-x-4 ml-auto">
