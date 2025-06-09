@@ -1,4 +1,3 @@
-// components/SignInModal.jsx
 import { X } from 'lucide-react';
 
 const SignInModal = ({ isOpen, onClose }) => {

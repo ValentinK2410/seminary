@@ -1,4 +1,3 @@
-// Navigation.jsx
 import { useState } from 'react';
 import { Logo } from '../../images/Logo';
 import { LogoText } from './components/LogoText';
@@ -7,7 +6,7 @@ import { Menu, X } from 'lucide-react';
 import './Navigation.css';
 import CategoryMenuBtn from './components/CategoryMenuBtn';
 import Search from '../../components/Search';
-import SignInModal from './components/SignInModal'; // Import the new component
+import SignInModal from './components/SignInModal';
 import { SecondaryButton } from '../../componentLibrary/SecondaryButton';
 
 export const Navigation = () => {

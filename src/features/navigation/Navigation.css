@@ -5,18 +5,18 @@
   display: none;
 }
 
- .side_menu_from_hamburger {
+.side_menu_from_hamburger {
   display: none;
- }
- .overlay_with_side_menu {
+}
+
+.overlay_with_side_menu {
   display: none;
- }
+}
 
  .category_menu_btn {
     display: none;
  }
 
- 
  @media (min-width: 600px) {
    .category_menu_btn {
     display: block;
@@ -25,16 +25,6 @@
     top: 0px;
  }
 }
-
-/* @media (min-width: 1050px) {
- .search_in_navbar {
-    display: block;
-    min-width: 20px;
-    max-width: 250px;
-    width: 100%;
- }
-} */
-
 
 @media (max-width: 950px) {
  .side_menu_from_hamburger {
@@ -53,11 +43,3 @@
      display: flex;
   }
 }
-
-
-@media (max-width: 350px) {
-  .logo_text h2 {
-    display: none;
-  }
-}
-
