@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { LightBulb } from '../../images/LightBulb'
-import { resources } from './components/resources' // Import the resources array
+// import { carouselResources } from './components/carouselResources'
 
 export const Categories = () => {
   
@@ -23,7 +23,7 @@ export const Categories = () => {
         </div>
 
         <div className="mt-20 mx-auto px-10 py-10 max-w-6xl border border-red-500 rounded-xl border-dashed">
-          {/* Carousel container with navigation */}
+          {/* Carousel container */}
           <p className='text-4xl text-center text-yellow-500'>Создадим тут карусель</p>
         </div>
       </div>

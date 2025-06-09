@@ -1,7 +1,6 @@
-// src/data/resources.js
 import history from '../../../images/icons/history.jpg'
 
-export const resources = [
+export const carouselResources = [
   {
     id: 1,
     icon: (
