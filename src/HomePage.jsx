@@ -5,10 +5,12 @@ import { Banner } from './features/banner/Banner';
 import { Categories } from './features/categories/Categories';
 import Layout from './Layout';
 import { WhyChooseUs } from './features/whyChooseUs/WhyChooseUs';
+import { Banner2 } from './features/banner/Banner2';
 
 function HomePage() {
   return (
     <Layout>
+      <Banner2 />
       <Banner />
       <AboutUs />
       <Categories />

@@ -1,7 +1,5 @@
 export const Logo = () => {
   return (
-     <div className='py-2 w-fit text-indigo-600 flex items-center justify-between'>
-      <article className="min-w-10">  
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 957.000000 836.000000"
         preserveAspectRatio="xMidYMid meet" fill="currentColor" 
@@ -60,7 +58,5 @@ export const Logo = () => {
         -110 20 -303 26 -407 15z"/>
         </g>
         </svg>
-      </article>
-    </div>
   )
 }

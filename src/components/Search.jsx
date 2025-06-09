@@ -8,11 +8,12 @@ export default function SearchButtonModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="w-10 h-10 border border-gray-400 rounded-md flex items-center justify-center hover:bg-gray-100 transition"
+        className="group w-10 h-10 border border-gray-400 rounded-md flex items-center justify-center hover:bg-gray-100 transition"
         aria-label="Open Search"
       >
-        <Search className="w-5 h-5" />
+        <Search className="w-5 h-5 text-gray-300 transition-colors duration-300 group-hover:text-gray-600" />
       </button>
+
 
       {isOpen && (
         <div className="absolute w-full py-1 px-6 top-0 right-0 bg-black bg-opacity-50 flex items-center z-50">

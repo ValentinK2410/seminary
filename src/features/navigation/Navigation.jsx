@@ -22,11 +22,13 @@ export const Navigation = () => {
   };
 
   return (
-    <section className='fixed w-full px-4 ux:px-6 justify-between bg-white flex shadow z-10'>
+    <section className='fixed w-full px-4 ux:px-6 justify-between bg-indigo-700 flex shadow z-10'>
       <div className='w-full mx-auto max-w-7xl flex items-center'>
         <div className='w-full max-w-7xl mx-auto flex gap-4 justify-between items-center'>
-          <article className='flex gap-1 items-center'>
-            <Logo />
+          <article className='flex gap-1 items-center'> 
+            <div className='py-2 w-fit text-indigo-50 flex items-center justify-between min-w-10'>
+              <Logo />
+            </div>
             <LogoText />
             <div className='category_menu_btn'>
               <CategoryMenuBtn />
@@ -52,13 +54,13 @@ export const Navigation = () => {
             </div>
 
             {/* Hamburger Button */}
-            <div className='hamburger-btn w-fit border border-indigo-600 hover:bg-indigo-100 rounded-md transition-colors duration-200'>
+            <div className='hamburger-btn w-fit border border-indigo-300 hover:bg-white rounded-md transition-colors duration-200 group'>
               <button
                 className='w-fit px-2 py-1.5 self-end'
                 onClick={() => setMenuOpen(true)}
                 aria-label='Open menu'
               >
-                <Menu className='w-6 h-6 text-indigo-600' />
+                <Menu className='w-6 h-6 text-indigo-300 group-hover:text-gray-600' />
               </button>
             </div>
           </article>
@@ -66,7 +68,7 @@ export const Navigation = () => {
 
         {/* Side Menu */}
         <div
-          className={`side_menu_from_hamburger fixed top-0 right-0 h-full w-full max-w-sm bg-slate-200 shadow-lg z-50 transform transition-transform duration-300 ease-in-out 
+          className={`side_menu_from_hamburger fixed top-0 right-0 h-full w-full max-w-sm bg-slate-700 shadow-lg z-50 transform transition-transform duration-300 ease-in-out 
             ${menuOpen ? 'translate-x-0' : 'translate-x-full'}
           `}
         >
@@ -75,7 +77,7 @@ export const Navigation = () => {
             aria-label='Close menu'
             className='absolute top-2 right-4 p-4'
           >
-            <X className='w-6 h-6 text-gray-600' />
+            <X className='w-6 h-6 text-gray-100' />
           </button>
 
           <article className='h-full justify-center flex flex-col gap-4 p-6'>
