@@ -2,7 +2,7 @@ import { LightBulb } from '../../images/LightBulb'
 
 export const Courses = () => {
   return (
-    <section className='px-6 py-20  flex flex-col'>
+    <section className='p-6 sm:p-20  flex flex-col'>
       <div className='w-full max-w-7xl mx-auto flex justify-between flex-col space-y-5'>
         <article className='text-indigo-600 flex gap-4'>
           <LightBulb />

@@ -21,7 +21,7 @@ export const Banner2 = () => {
       ></div>
 
       {/* Foreground content */}
-      <div className="relative w-full h-screen flex flex-col items-center justify-center gap-10">
+      <div className="relative pt-10  w-full h-screen flex flex-col items-center justify-center gap-10">
         <div className='border ux:border-0 p-3 w-full flex gap-2 items-center justify-center'>
           <article className='py-2 w-fit text-indigo-50 flex items-center justify-between min-w-20 ux:min-w-[140px] md:min-w-60'>
             <Logo />

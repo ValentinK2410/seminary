@@ -22,9 +22,10 @@ export const Navigation = () => {
   };
 
   return (
-    <section className='fixed w-full px-4 ux:px-6 justify-between bg-indigo-700 flex shadow z-10'>
-      <div className='w-full mx-auto max-w-7xl flex items-center'>
-        <div className='w-full max-w-7xl mx-auto flex gap-4 justify-between items-center'>
+    <section className='fixed w-full px-6 sm:px-20 justify-between bg-indigo-700 flex shadow z-10'>
+      <article className='mx-auto max-w-7xl w-full'>
+        <div className='w-full flex items-center'>
+        <div className='w-full mx-auto flex gap-4 justify-between items-center'>
           <article className='flex gap-1 items-center'> 
             <div className='py-2 w-fit text-indigo-50 flex items-center justify-between min-w-10'>
               <Logo />
@@ -96,6 +97,8 @@ export const Navigation = () => {
         {/* Sign In Modal */}
         <SignInModal isOpen={authModalOpen} onClose={closeAuthModal} />
       </div>
+
+      </article>
     </section>
   );
 };

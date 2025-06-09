@@ -4,7 +4,7 @@
     gap: 40px;
   }
 
-@media (min-width: 950px) {
+@media (min-width: 1120px) {
   .main_menu_items {
     flex-direction: row;
     gap: 8px;
