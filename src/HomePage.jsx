@@ -5,6 +5,7 @@ import { Banner } from './features/banner/Banner';
 import { Categories } from './features/categories/Categories';
 import Layout from './Layout';
 import { WhyChooseUs } from './features/whyChooseUs/WhyChooseUs';
+import { Programs } from './features/programs/Programs';
 
 function HomePage() {
   return (
@@ -14,6 +15,7 @@ function HomePage() {
       <Categories />
       <Courses />
       <WhyChooseUs />
+      <Programs />
     </Layout>
   );
 }
