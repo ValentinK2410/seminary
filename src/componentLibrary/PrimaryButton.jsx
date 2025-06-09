@@ -17,7 +17,7 @@ export const PrimaryButton = ({ onClick, children, className = '' }) => {
          
         flex 
         items-center 
-        justify-between
+        justify-center
         transition-colors 
         duration-200
         ${className}

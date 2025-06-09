@@ -19,7 +19,7 @@
     font-size: xx-large;
   }
 
-@media (min-width: 950px) {
+@media (min-width: 1120px) {
   .nav-link {
     font-size: medium;
   }
