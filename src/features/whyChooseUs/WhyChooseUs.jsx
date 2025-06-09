@@ -3,7 +3,7 @@ import { SecondaryButton } from '../../componentLibrary/SecondaryButton'
 
 export const WhyChooseUs = () => {
   return (
-    <section className='bg-indigo-600 px-6 py-20  flex flex-col'>
+    <section className='bg-indigo-700 px-6 py-20  flex flex-col'>
       <div className='w-full max-w-7xl mx-auto'>
         <div className='space-y-5'>
 

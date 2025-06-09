@@ -41,7 +41,6 @@ export const Banner2 = () => {
            <span className='hidden ux:inline-block mr-1'> Просмотреть </span> Все Курсы <span className="ml-2 transition-colors duration-200">→</span>
           </SecondaryButton>
         </div>
-        
       </div>
     </section>
   );
