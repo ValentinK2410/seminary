@@ -2,21 +2,17 @@
 import { SecondaryButton } from '../../componentLibrary/SecondaryButton'
 import { LightBulb } from '../../images/LightBulb'
 import mainPerson from '../../images/mainPerson.png'
-import { SignIn } from '../navigation/components/SignIn'
 
 export const Banner = () => {
   return (
-    <section className='relative px-4 ux:px-6 pt-14 sm:pt-14 pb-10 sm:pb-0 bg-indigo-25 flex flex-col'>
-      <div className='w-full mx-auto max-w-7xl ml-auto flex justify-end'>
-        <SignIn />
-      </div> 
-
+    <section className='relative px-4 ux:px-6 sm:pt-0 pb-10 sm:pb-0 bg-indigo-25 flex flex-col'>
+      <div className='EMPTY-DIV h-[70px] bg-indigo-25'></div>
       <div className='w-full max-w-7xl mx-auto flex justify-between items-center  flex-col  sm:flex-row-reverse gap-8 sm:gap-1'>
         <div className='w-full hidden sm:block sm:mt-10'>
           <img src={mainPerson} alt="main person" className='w-full' />
         </div>
 
-        <div className='mt-10 mb-4 xs:-mt-20 sm:mt-10 w-full space-y-8'>
+        <div className='mt-5 mb-4 sm:mt-10 w-full space-y-8'>
           <article className='text-indigo-600 flex gap-4'>
             <LightBulb />
             <p>Возрастайте вместе с МБС!</p>
