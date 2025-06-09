@@ -47,7 +47,7 @@ export const Navigation = () => {
             </div>
             <div>
               <SecondaryButton  onClick={openAuthModal}
-                className='!py-1 px-3 h-full'
+                className='!py-1 px-3 h-full border-white'
                 >
                     Вход
               </SecondaryButton>
