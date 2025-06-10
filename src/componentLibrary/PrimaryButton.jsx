@@ -14,7 +14,7 @@ export const PrimaryButton = ({ onClick, children, className = '' }) => {
         px-5 
         py-2.5 
         text-lg
-         
+        
         flex 
         items-center 
         justify-center
