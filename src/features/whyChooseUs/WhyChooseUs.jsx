@@ -3,7 +3,7 @@ import { SecondaryButton } from '../../componentLibrary/SecondaryButton'
 
 export const WhyChooseUs = () => {
   return (
-    <section className=' bg-indigo-700  p-6 sm:p-20  flex flex-col gap-20'>
+    <section className=' bg-blue-700  p-6 sm:p-20  flex flex-col gap-20'>
       <div className='w-full max-w-7xl mx-auto'>
         <div className='space-y-5'>
           <LightBulbTopic topic='Почему стоит выбрать МБС?' textColor="text-yellow-300" />
