@@ -2,13 +2,13 @@ export const PrimaryButton = ({ onClick, children, className = '' }) => {
   return (
     <button
       className={`
-        bg-blue-700 
+        bg-blue-800 
         hover:bg-white 
         text-white 
-        hover:text-blue-700 
+        hover:text-blue-800 
         border 
-        border-blue-700
-        hover:border-blue-700
+        border-blue-800
+        hover:border-blue-800
         rounded-lg 
 
         px-5 
