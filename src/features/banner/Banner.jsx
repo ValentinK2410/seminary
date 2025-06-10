@@ -24,7 +24,7 @@ export const Banner = () => {
             Богословская семинария МБС предлагает образовательные возможности, которые помогут вам быть эффективными в вашем призвании и служении в церкви.
           </p>
           <PrimaryButton className=''>
-            Просмотреть все курсы <span className="ml-2 transition-colors duration-200">→</span>
+            Просмотреть все курсы <span className="ml-2 mt-1 transition-colors duration-200">→</span>
           </PrimaryButton>
         </div>
       </div>

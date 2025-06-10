@@ -18,7 +18,7 @@ export const AboutUs = () => {
           Присоединяйтесь к сообществу студентов Московской богословской семинарии МБС! Став студентом, вы получите доступ к курсам семинарии и сможете узнавать первыми о новых возможностях в МБС.
           </p>
           <PrimaryButton className='w-fit'>
-            Стать студентом МБС <span className="ml-2 transition-colors duration-200">→</span>
+            Стать студентом МБС <span className="ml-2 mt-1 transition-colors duration-200">→</span>
           </PrimaryButton>
         </div>
         <div className='overflow-hidden'>

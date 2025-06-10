@@ -4,7 +4,7 @@ export const Courses = () => {
   return (
     <section className='p-6 sm:p-20  flex flex-col'>
       <div className='w-full max-w-7xl mx-auto flex justify-between flex-col space-y-5  items-center sm:items-start'>
-        <LightBulbTopic topic='Курсы' />
+        <LightBulbTopic topic='Курсы на базе МБС' />
         <h3 className='text-2xl sm:text-4xl text-indigo-900 max-w-[29ch]'>
           Откройте для себя курсы богословской семинарии МБС
         </h3>  

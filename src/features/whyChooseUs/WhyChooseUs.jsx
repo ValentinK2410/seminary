@@ -16,7 +16,7 @@ export const WhyChooseUs = () => {
           </p>
         </div>
         <SecondaryButton className='mt-10'>
-          Перейти в каталог курсов  <span className="ml-2 transition-colors duration-200">→</span>
+          Каталог курсов  <span className="ml-2 mt-1 transition-colors duration-200">→</span>
         </SecondaryButton>
       </div>
     </section>
