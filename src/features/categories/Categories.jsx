@@ -55,12 +55,12 @@ const divContent = [
     const isLastSlide = currentSlide >= totalItems - slidesToShow;
 
     return (
-      <div className="flex justify-between items-center mt-4">
+      <div className="relative bg-green-200 mt-6 flex justify-between items-center">
         <button
           onClick={previous}
           disabled={isFirstSlide}
           aria-label="Previous slide"
-          className={`mr-4 p-2 rounded-full ${
+          className={`mr-4 p-2 absolute top-0 rounded-full bg-blue-100 ${
             isFirstSlide ? 'opacity-50 cursor-not-allowed' : 'hover:bg-indigo-100'
           }`}
         >
@@ -79,12 +79,12 @@ const divContent = [
             />
           </svg>
         </button>
-        <div className="carousel-dots"></div>
+        <div className="carousel-dots "></div>
         <button
           onClick={next}
           disabled={isLastSlide}
           aria-label="Next slide"
-          className={`-mr-4 p-2 rounded-full ${
+          className={`-mr-4 p-2 rounded-full absolute top-0 right-2 bg-blue-100 ${
             isLastSlide ? 'opacity-50 cursor-not-allowed' : 'hover:bg-indigo-100'
           }`}
         >
@@ -121,7 +121,7 @@ const divContent = [
         </div>
 
         <div className="mt-10 mx-auto py-10 max-w-6xl">
-          <div style={{ paddingBottom: '30px', position: 'relative' }}>
+          <div className='mx-auto' style={{ paddingBottom: '30px', position: 'relative' }}>
             <Carousel
               additionalTransfrom={0}
               arrows={false}
@@ -142,18 +142,23 @@ const divContent = [
               customButtonGroup={<CustomButtonGroup />}
               renderDotsOutside={true}
               responsive={{
-                desktop: {
-                  breakpoint: { max: 3000, min: 1024 },
+                  tv: {
+                  breakpoint: { max: 3000, min: 1400 },
                   items: 4,
                   partialVisibilityGutter: 40,
                 },
+                desktop: {
+                  breakpoint: { max: 1400, min: 1010 },
+                  items: 3,
+                  partialVisibilityGutter: 40,
+                },
                 tablet: {
-                  breakpoint: { max: 1024, min: 464 },
+                  breakpoint: { max: 1010, min: 720 },
                   items: 2,
                   partialVisibilityGutter: 30,
                 },
                 mobile: {
-                  breakpoint: { max: 464, min: 0 },
+                  breakpoint: { max: 720, min: 0 },
                   items: 1,
                   partialVisibilityGutter: 20,
                 },
@@ -173,14 +178,14 @@ const divContent = [
                   style={{
                     width: '100%',
                     height: '430px',
-                    backgroundColor: 'transparent',
+                   
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: '0px',
                   }}
                 >
-                  <div className="h-full px-4 pt-6 pb-4 max-w-[300px] border border-indigo-400 rounded-lg bg-white shadow-sm flex flex-col items-center justify-between text-center">
+                  <div className="h-full px-4 pt-6 pb-4 min-w-[250px] max-w-[300px] border border-indigo-400 rounded-lg bg-white shadow-sm flex flex-col items-center justify-between text-center">
                     <article className="flex flex-col items-center text-center">
                       <img
                         src={item.image}
