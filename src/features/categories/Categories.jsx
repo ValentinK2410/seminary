@@ -142,23 +142,19 @@ const divContent = [
               customButtonGroup={<CustomButtonGroup />}
               renderDotsOutside={true}
               responsive={{
-                  tv: {
-                  breakpoint: { max: 3000, min: 1400 },
-                  items: 4,
-                  partialVisibilityGutter: 40,
-                },
+         
                 desktop: {
-                  breakpoint: { max: 1400, min: 1010 },
+                  breakpoint: { max: 3000, min: 1010 },
                   items: 3,
                   partialVisibilityGutter: 40,
                 },
                 tablet: {
-                  breakpoint: { max: 1010, min: 720 },
+                  breakpoint: { max: 1010, min: 520 },
                   items: 2,
                   partialVisibilityGutter: 30,
                 },
                 mobile: {
-                  breakpoint: { max: 720, min: 0 },
+                  breakpoint: { max: 520, min: 0 },
                   items: 1,
                   partialVisibilityGutter: 20,
                 },
@@ -185,7 +181,7 @@ const divContent = [
                     padding: '0px',
                   }}
                 >
-                  <div className="h-full px-4 pt-6 pb-4 min-w-[250px] max-w-[300px] border border-indigo-400 rounded-lg bg-white shadow-sm flex flex-col items-center justify-between text-center">
+                  <div className="h-full px-4 pt-6 pb-4  border border-indigo-400 rounded-lg bg-white shadow-sm flex flex-col items-center justify-between text-center">
                     <article className="flex flex-col items-center text-center">
                       <img
                         src={item.image}
