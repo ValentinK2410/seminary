@@ -22,7 +22,7 @@ export const Navigation = () => {
   };
 
   return (
-    <section className='fixed w-full px-6 sm:px-20 justify-between bg-blue-800 flex shadow z-10'>
+    <section className='fixed w-full px-6 md:px-20 justify-between bg-blue-800 flex shadow z-10'>
       <article className='mx-auto max-w-7xl w-full'>
         <div className='w-full flex items-center'>
         <div className='w-full mx-auto flex gap-4 justify-between items-center'>
