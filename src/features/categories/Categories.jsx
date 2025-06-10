@@ -1,19 +1,12 @@
-import { useRef } from 'react'
-import { LightBulb } from '../../images/LightBulb'
-// import { carouselResources } from './components/carouselResources'
+import { LightBulbTopic } from '../../components/LightBulbTopic';
 
 export const Categories = () => {
   
-
   return (
-    <section className="bg-indigo-25 p-6 sm:p-20 flex flex-col items-center gap-20">
+    <section className="bg-indigo-25 p-6 sm:p-20 flex items-center">
       <div className="w-full max-w-7xl mx-auto">
-        <div className="flex text-center flex-col justify-center space-y-5">
-          <article className="mx-auto text-indigo-600 flex gap-4">
-            <LightBulb />
-            <p>Ресурсы для роста и служения</p>
-          </article>
-
+        <div className="flex text-center flex-col justify-center items-center space-y-5">
+          <LightBulbTopic topic='Ресурсы для роста и служения' />
           <h3 className="mx-auto text-2xl sm:text-4xl text-indigo-900 max-w-[40ch]">
             Преподаватели МБС подобрали ресурсы для решения современных вызовов
           </h3>

@@ -1,4 +1,4 @@
-import { LightBulb } from '../../images/LightBulb'
+import { LightBulbTopic } from '../../components/LightBulbTopic';
 import { SecondaryButton } from '../../componentLibrary/SecondaryButton'
 
 export const WhyChooseUs = () => {
@@ -6,11 +6,7 @@ export const WhyChooseUs = () => {
     <section className=' bg-indigo-700  p-6 sm:p-20  flex flex-col gap-20'>
       <div className='w-full max-w-7xl mx-auto'>
         <div className='space-y-5'>
-
-          <article className='text-yellow-300 flex gap-4'>
-            <LightBulb />
-            <p>Почему стоит выбрать МБС?</p>
-          </article>
+          <LightBulbTopic topic='Почему стоит выбрать МБС?' textColor="text-yellow-300" />
 
           <h3 className='text-2xl sm:text-4xl text-white max-w-[29ch]'>
           Вы определяете цели в соответствии с вашим призванием, а мы помогаем вам выстроить ваш индивидуальный путь обучения
