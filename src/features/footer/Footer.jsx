@@ -83,7 +83,7 @@ export const Footer = () => {
       </div>
       <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-6 justify-between border-t border-zinc-200 p-6 text-left text-zinc-600 px-6 sm:px-20">
         <p>&copy; {new Date().getFullYear()} Московская Богословская Семинария. Все права защищены.</p>
-        <div class="social-copyright">
+        <div className="social-copyright">
           <ul className="flex space-x-4 ml-auto">
             <li>
               <a href="#" aria-label="Facebook">

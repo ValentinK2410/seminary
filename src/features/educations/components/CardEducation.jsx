@@ -1,21 +1,12 @@
-import "./SingleProgram.css";
-import image1 from "../../../images/programs/01.png";
+import "./CardEducation.css";
 
-export const SingleProgram = (props) => {
+export const CardEducation = (props) => {
   const {
-    programClass,
-    Slug,
     Img,
     Title,
     Description,
-    Author,
-    Tag,
-    publishedDate,
-    btnText,
-    imgWidth,
-    imgHeight,
-    onClick,
   } = props;
+
   return (
     <div className="program-card">
       <div className="card-image">
@@ -25,7 +16,7 @@ export const SingleProgram = (props) => {
         <div className="card-title">{Title}</div>
         <div className="card-description">{Description}</div>
       </div>
-      <button className="card-button">{btnText} <span>→</span></button>
+      <button className="card-button">Подробнее <span>→</span></button>
     </div>
   );
 };
