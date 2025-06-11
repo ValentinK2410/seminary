@@ -7,6 +7,8 @@ import { WhyChooseUs } from './features/whyChooseUs/WhyChooseUs';
 import { Educations } from './features/educations/Educations';
 import { Banner } from './features/banner/Banner';
 import { Teachers } from './features/teachers/Teachers';
+import { StudentsFeedback } from './features/feedback/StudentsFeedback';
+import { AboutCampus } from './features/campus/AboutCampus';
 
 function HomePage() {
   return (
@@ -18,6 +20,8 @@ function HomePage() {
       <WhyChooseUs />
       <Teachers />
       <Educations />
+      <StudentsFeedback />
+      <AboutCampus />
     </Layout>
   );
 }

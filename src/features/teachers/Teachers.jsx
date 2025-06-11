@@ -17,7 +17,7 @@ export const Teachers = () => {
         </div>
         
         <div className="flex flex-wrap gap-10 justify-center">
-          <p className="text-7xl text-white">РАБОТАЮ!!!</p>
+          <p className="text-4xl text-white">Я НАЧАЛ ЭТУ СЕКЦИЮ </p>
           {/* {listOfTeachers.map((resource, index) => (
             <div
               key={resource.id}

@@ -2,7 +2,7 @@ import { LightBulbTopic } from '../../components/LightBulbTopic';
 
 export const Courses = () => {
   return (
-    <section className='p-6 sm:p-20  flex flex-col'>
+    <section className='p-6 sm:p-20  flex gap-10'>
       <div className='w-full max-w-7xl mx-auto flex justify-between flex-col space-y-5  items-center sm:items-start'>
         <LightBulbTopic topic='Курсы на базе МБС' />
         <h3 className='text-2xl sm:text-4xl text-indigo-900 max-w-[29ch]'>
@@ -12,6 +12,11 @@ export const Courses = () => {
           Семинария предлагает различные формы обучения, поэтому вы найдете то, что подойдет именно вам
         </p>
       </div>
+
+      <div className='border p-6 rounded-xl flex justify-center items-center border-red-500 bg-yellow-200'>
+            <p className="text-xl text-center text-red-500">НАДО ДОРАБОТАТЬ, КТО ХОЧЕТ? </p>
+      </div>
+
     </section>
   )
 }
