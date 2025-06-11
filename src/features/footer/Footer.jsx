@@ -13,12 +13,12 @@ export const Footer = () => {
     <footer className="bg-indigo-25 px-6 sm:px-20">
       <div
         className="w-full max-w-7xl mx-auto grid gap-8 py-[100px]
-                  grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
         {/* Колонка 1 — Всегда первая */}
         <div className="order-1">
-          <div className='flex gap-2 items-center mb-4 ml-[-12px]'>
-            <div className='w-fit min-w-20 ux:min-w-[110px]'>
+          <div className='flex gap-2 mb-4'>
+            <div className='w-fit min-w-20 text-gray-600 -ml-4 ux:min-w-[110px]'>
               <Logo />
             </div>
             <h1 className='text-xl ux:text-1xl uppercase text-black'>
@@ -34,11 +34,11 @@ export const Footer = () => {
 
           <ul className='space-y-2'>
             <li className='flex items-center gap-2 text-zinc-600'>
-              <Icon_map className="w-3" />
+              <Icon_map className="w-3 text-indigo-600" />
               Yarra Park, Melbourne, Australia
             </li>
             <li className='flex items-center gap-2 text-zinc-600'>
-              <Icon_phone className="w-3" />
+              <Icon_phone className="w-3 text-indigo-600" />
               <a href="tel:+4733378901" className="hover:text-indigo-600">+(61) 485-826-710</a>
             </li>
           </ul>
@@ -62,7 +62,7 @@ export const Footer = () => {
         </div>
 
         {/* Колонка 3 — Соцсети, скрыта на lg и ниже */}
-        <div className="hidden sm:block md:block order-4 md:order-4 lg:hidden xl:block xl:order-3">
+        <div className="hidden sm:block md:block order-2  lg:hidden xl:block xl:order-3">
           <h3 className='text-lg font-semibold mb-4'>Социальные сети</h3>
           <ul className='space-y-2'>
             {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((social) => (
@@ -79,7 +79,7 @@ export const Footer = () => {
         </div>
 
         {/* Колонка 4 — Подписка */}
-        <div className="order-2 md:order-2 lg:order-3 xl:order-4">
+        <div className="max-w-sm order-2 lg:order-3 xl:order-4">
           <h3 className='text-lg font-semibold mb-4'>Подписка на новости</h3>
           <p className='text-zinc-600 mb-4'>
             Подпишитесь на нашу рассылку, чтобы получать последние новости и обновления.
