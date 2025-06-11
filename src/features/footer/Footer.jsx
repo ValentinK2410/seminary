@@ -75,7 +75,7 @@ export const Footer = () => {
             Подпишитесь на нашу рассылку, чтобы получать последние новости и обновления.
           </p>
           <form className='space-y-3'>
-            <input 
+            <Input 
               type="email" 
               placeholder="Ваш email" 
               className='w-full'
