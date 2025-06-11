@@ -5,6 +5,7 @@ import { Icon_phone } from '../../images/Icon_phone';
 import { Icon_facebook } from '../../images/Icon_facebook';
 import { Icon_instagram } from '../../images/Icon_instagram';
 import { Icon_youtube } from '../../images/Icon_youtube';
+import { Input } from '../../componentLibrary/Input';
 
 export const Footer = () => {
   return (
@@ -77,8 +78,9 @@ export const Footer = () => {
             <input 
               type="email" 
               placeholder="Ваш email" 
-              className='w-full px-4 py-2 border border-zinc-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent'
+              className='w-full'
             />
+
             <PrimaryButton className='w-full !justify-center'>
               Подписаться
             </PrimaryButton>

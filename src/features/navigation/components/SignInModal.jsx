@@ -45,7 +45,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
               <Input
                 type="password"
                 id="password"
-                className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                className=""
                 placeholder="Введите ваш пароль"  
                 required
               />
@@ -56,7 +56,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
               <Input
                 type="checkbox"
                 id="trust-device"
-                className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-600"
+                className="h-4 w-4 border-0 focus:ring-0"
               />
               <label htmlFor="trust-device" className="text-sm text-gray-700">
                 Я доверяю этому устройству  
@@ -66,7 +66,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"
+              className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"
             >
               Войти  
             </button>
