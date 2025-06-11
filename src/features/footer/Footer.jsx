@@ -12,8 +12,7 @@ export const Footer = () => {
   return (
     <footer className="bg-indigo-25 px-6 sm:px-20">
       <div
-        className="w-full max-w-7xl mx-auto grid gap-10 py-[100px]
-                  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        className="w-full max-w-7xl mx-auto grid gap-10 py-[100px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
         {/* Колонка 1 — Всегда первая */}
         <div className="order-1">
@@ -48,7 +47,7 @@ export const Footer = () => {
         <div className="order-2 sm:order-3 md:order-3 lg:order-3 xl:order-2">
           <h3 className='text-lg text-zinc-600 font-semibold mb-4'>Быстрые ссылки</h3>
           <ul className='space-y-2'>
-            {['О нас', 'Курсы', 'Контакты', 'Блог'].map((item) => (
+            {['Что же нам тут писать', 'Понятия не имею', 'Ссылки тут какие', 'Нужны подсказки'].map((item) => (
               <li key={item}>
                 <a
                   href={`/${item.toLowerCase().replace(' ', '-')}`}
@@ -65,7 +64,7 @@ export const Footer = () => {
         <div className="hidden order-2 xl:block xl:order-3">
           <h3 className='text-lg text-zinc-600 font-semibold mb-4'>Социальные сети</h3>
           <ul className='space-y-2'>
-            {['Facebook', 'Twitter', 'Instagram', 'LinkedIn'].map((social) => (
+            {['Facebook', 'X.com', 'Instagram', 'LinkedIn'].map((social) => (
               <li key={social}>
                 <a
                   href={`https://${social.toLowerCase()}.com`}
