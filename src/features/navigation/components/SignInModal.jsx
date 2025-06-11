@@ -1,4 +1,6 @@
 import { X } from 'lucide-react';
+import { Input } from '../../../componentLibrary/Input';
+
 
 export const SignInModal = ({ isOpen, onClose }) => {
   // Prevent rendering if modal is not open
@@ -26,7 +28,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
               <label htmlFor="email" className="text-sm font-medium text-gray-700">
                 Электронная почта  
               </label>
-              <input
+              <Input
                 type="email"
                 id="email"
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
@@ -40,7 +42,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
               <label htmlFor="password" className="text-sm font-medium text-gray-700">
                 Пароль  
               </label>
-              <input
+              <Input
                 type="password"
                 id="password"
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
@@ -51,7 +53,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
 
             {/* Trust Device Checkbox */}
             <div className="flex items-center gap-2">
-              <input
+              <Input
                 type="checkbox"
                 id="trust-device"
                 className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-600"
