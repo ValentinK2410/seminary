@@ -1,4 +1,4 @@
-const CategoryMenuBtn = () => {
+export const CategoryMenuBtn = () => {
   return (
     <button className="flex items-center gap-2 px-4 py-1 bg-purple-50 rounded-lg border border-purple-200 text-purple-700 text-lg">
       <svg className="w-6 h-6 text-purple-700" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -19,5 +19,3 @@ const CategoryMenuBtn = () => {
     </button>
   );
 };
-
-export default CategoryMenuBtn;

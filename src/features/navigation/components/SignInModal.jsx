@@ -1,6 +1,6 @@
 import { X } from 'lucide-react';
 
-const SignInModal = ({ isOpen, onClose }) => {
+export const SignInModal = ({ isOpen, onClose }) => {
   // Prevent rendering if modal is not open
   if (!isOpen) return null;
 
@@ -87,5 +87,3 @@ const SignInModal = ({ isOpen, onClose }) => {
     </div>
   );
 };
-
-export default SignInModal;

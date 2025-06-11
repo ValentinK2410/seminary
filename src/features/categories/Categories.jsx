@@ -1,5 +1,5 @@
 import { LightBulbTopic } from '../../components/LightBulbTopic';
-import Carousel, { ButtonGroupProps } from 'react-multi-carousel';
+import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { divContent } from './components/carouselContent';
 import './Categories.css'
