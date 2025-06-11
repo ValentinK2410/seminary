@@ -1,21 +1,15 @@
 .desktop_menu_items {
   display: block;
 }
-.hamburger-btn {
+
+.hamburger-btn,
+.side_menu_from_hamburger,
+.overlay_with_side_menu,
+.category_menu_btn
+ {
   display: none;
 }
 
-.side_menu_from_hamburger {
-  display: none;
-}
-
-.overlay_with_side_menu {
-  display: none;
-}
-
- .category_menu_btn {
-    display: none;
- }
 
  @media (min-width: 600px) {
    .category_menu_btn {

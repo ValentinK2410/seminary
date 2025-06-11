@@ -14,7 +14,6 @@ export default function SearchButtonModal() {
         <Search className="w-5 h-5 text-gray-300 transition-colors duration-300 group-hover:text-gray-600" />
       </button>
 
-
       {isOpen && (
         <div className="absolute w-full py-1 px-6 top-0 right-0 bg-black bg-opacity-50 flex items-center z-50">
           <div className="bg-white rounded-xl shadow-xl w-full ml-auto max-w-md relative">
