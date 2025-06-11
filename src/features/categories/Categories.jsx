@@ -13,11 +13,7 @@ import image7 from '../../images/carouselmages/image7.jpeg';
 import image8 from '../../images/carouselmages/image8.jpeg';
 import image9 from '../../images/carouselmages/image9.jpeg';
 import image10 from '../../images/carouselmages/image10.jpeg';
-import image11 from '../../images/carouselmages/image11.jpeg';
-import image12 from '../../images/carouselmages/image12.jpeg';
 
-// Fallback image (optional, define if needed)
-// import fallback from '../../images/fallback.jpeg';
 
 export const Categories = () => {
 const divContent = [
@@ -30,22 +26,13 @@ const divContent = [
     { id: 7, title: 'Богословие', description: 'Основные принципы богословия и теологии, охватывающие изучение ключевых доктрин и учений христианства. Курсы включают в себя анализ теологических споров.', info: '103+ Курса', image: image7, alt: 'Изображение для Богословие' },
     { id: 8, title: 'Миссия', description: 'Миссионерская деятельность и стратегии, охватывающие разработку и реализацию миссионерских программ и проектов.', info: '91+ Курс', image: image8, alt: 'Изображение для Миссия' },
     { id: 9, title: 'Благовестие', description: 'Методы и практики благовестия, охватывающие различные стратегии проповедничества и распространения евангельского послания.', info: '118+ Курсов', image: image9, alt: 'Изображение для Благовестие' },
-    { id: 11, 
+    { id: 10, 
     title: 'Основание церквей', 
     description: 'Мастер-классы по стратегиям создания и развития церковных общин, включая управление ресурсами, формирование сообщества и миссионерскую деятельность.', 
     info: '82+ Курса', 
-    image: image11, 
+    image: image10, 
     alt: 'Изображение для Основание церквей' 
-    },
-    { 
-      id: 12, 
-      title: 'Проповедь', 
-      description: 'Обширный обзор техник и методов проповеди в христианстве, от классических до современных подходов, с акцентом на эффективное воздействие на слушателей.', 
-      info: '135+ Курсов', 
-      image: image12, 
-      alt: 'Изображение для Проповедь' 
     }
-
   ];
 
 
