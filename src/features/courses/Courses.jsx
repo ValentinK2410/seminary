@@ -14,7 +14,7 @@ export const Courses = () => {
       </div>
 
       <div className='border p-6 rounded-xl flex justify-center items-center border-red-500 bg-yellow-200'>
-            <p className="text-xl text-center text-red-500">НАДО ДОРАБОТАТЬ, КТО ХОЧЕТ? </p>
+            <p className="text-xl text-center text-red-500">Делает Валентин </p>
       </div>
 
     </section>
