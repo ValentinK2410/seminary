@@ -6,7 +6,7 @@ import './Categories.css'
 
 export const Categories = () => {
   
-  const CustomButtonGroup = ({ next, previous, carouselState }: ButtonGroupProps) => {
+  const CustomButtonGroup = ({ next, previous, carouselState }) => {
     const { currentSlide = 0, totalItems = 0, slidesToShow = 1 } = carouselState || {};
     const isFirstSlide = currentSlide === 0;
     const isLastSlide = currentSlide >= totalItems - slidesToShow;
