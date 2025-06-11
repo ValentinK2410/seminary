@@ -1,10 +1,11 @@
-import { PrimaryButton } from '../../componentLibrary/PrimaryButton'
-import aboutCampus from '../../images/aboutCampus.jpg';
+
+import { PrimaryButton } from '../../componentLibrary/PrimaryButton';
 import { LightBulbTopic } from '../../components/LightBulbTopic';
+import aboutCampus from '../../images/aboutCampus.jpg';
 
 export const AboutCampus = () => {
   return (
-    <section className='w-full  p-6 sm:p-20 flex'>
+    <section className='w-full p-6 sm:p-20 flex'>
       <article className='mx-auto max-w-7xl flex gap-10 lg:gap-20 items-center flex-col-reverse lg:flex-row'>
         <div className='w-full  mx-auto flex flex-col items-center sm:items-start text-center  justify-center gap-5'>
            <LightBulbTopic topic='Прекрасные условия' />
@@ -18,6 +19,7 @@ export const AboutCampus = () => {
           <PrimaryButton className='w-fit'>
               О семинарии МБС
           </PrimaryButton>
+          
         </div>
         <div className='overflow-hidden'>
           <img src={aboutCampus} alt="about us" className='rounded-lg max-h-[500px]' />

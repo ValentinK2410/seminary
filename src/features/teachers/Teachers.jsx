@@ -4,7 +4,7 @@ import { listOfTeachers } from "./components/listOfTeachers";
 export const Teachers = () => {
 
   return (
-    <section className="p-6 sm:p-20 bg-indigo-400 flex items-center">
+    <section className="p-6 sm:p-20  flex items-center">
       <div className="w-full max-w-7xl mx-auto flex  flex-col gap-10 ">
         <div className="flex text-center flex-col justify-center items-center space-y-5">
           <LightBulbTopic topic='Преподаватели МБС' />
@@ -16,7 +16,7 @@ export const Teachers = () => {
           </p>
         </div>
         
-        <div className="flex flex-wrap gap-10 justify-center">
+        <div className="flex bg-red-500 flex-wrap gap-10 justify-center">
           <p className="text-4xl text-white">Я НАЧАЛ ЭТУ СЕКЦИЮ </p>
           {/* {listOfTeachers.map((resource, index) => (
             <div

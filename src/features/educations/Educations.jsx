@@ -4,7 +4,7 @@ import { educationalDegrees } from "./components/educationalDegrees";
 export const Educations = () => {
 
   return (
-    <section className="p-6 sm:p-20 flex  items-center">
+    <section className="bg-indigo-25  p-6 sm:p-20 flex  items-center">
       <div className="w-full max-w-7xl mx-auto flex  flex-col gap-10 ">
         <div className="flex text-center flex-col justify-center items-center space-y-5">
           <LightBulbTopic topic='Учебные программы' />
