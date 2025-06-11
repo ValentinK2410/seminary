@@ -24,7 +24,7 @@ const cards = [
 
 
   return (
-    <div className="w-fit h-fit xs:p-2 rounded-xl grid xs:grid-cols-2 gap-4 xl:mx-auto max-w-3xl   overflow-auto">
+    <div className="w-fit h-fit xs:p-2 rounded-xl grid sm:grid-cols-2  md:grid-cols-3 xl:grid-cols-2 gap-4 xl:mx-auto max-w-3xl   overflow-auto">
       {cards.map((card, index) => (
         <div
           key={index}
