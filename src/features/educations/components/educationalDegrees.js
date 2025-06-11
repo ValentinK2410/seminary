@@ -1,6 +1,6 @@
-import image01 from "../../../images/programs/01.png";
-import image02 from "../../../images/programs/02.png";
-import image03 from "../../../images/programs/03.png";
+import image01 from "../../../images/educationImages/01.png";
+import image02 from "../../../images/educationImages/02.png";
+import image03 from "../../../images/educationImages/03.png";
 
 export const educationalDegrees = [
   {
