@@ -6,6 +6,7 @@ import Layout from './Layout';
 import { WhyChooseUs } from './features/whyChooseUs/WhyChooseUs';
 import { Educations } from './features/educations/Educations';
 import { Banner } from './features/banner/Banner';
+import { Teachers } from './features/teachers/Teachers';
 
 function HomePage() {
   return (
@@ -15,6 +16,7 @@ function HomePage() {
       <Categories />
       <Courses />
       <WhyChooseUs />
+      <Teachers />
       <Educations />
     </Layout>
   );
