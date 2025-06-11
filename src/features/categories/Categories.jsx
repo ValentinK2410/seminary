@@ -99,14 +99,18 @@ export const Categories = () => {
               customButtonGroup={<CustomButtonGroup />}
               renderDotsOutside={true}
               responsive={{
-         
+                tv: {
+                  breakpoint: { max: 3000, min: 1300 },
+                  items: 4,
+                  partialVisibilityGutter: 40,
+                },
                 desktop: {
-                  breakpoint: { max: 3000, min: 1010 },
+                  breakpoint: { max: 1300, min: 1000 },
                   items: 3,
                   partialVisibilityGutter: 40,
                 },
                 tablet: {
-                  breakpoint: { max: 1010, min: 520 },
+                  breakpoint: { max: 1000, min: 520 },
                   items: 2,
                   partialVisibilityGutter: 30,
                 },

@@ -4,8 +4,8 @@
   }
 }
 
-@media (min-width: 550px) {
+
   .carousel_item_container .react-multi-carousel-list {
     margin: 0px auto;
   }
-}
+
