@@ -1,11 +1,11 @@
+.carousel_item_container .react-multi-carousel-list {
+  margin: 0px auto;
+}
+
 @media (min-width: 400px) {
   .carousel_item {
     max-width: 300px;
-  }
-}
+  }  
+}  
 
-
-  .carousel_item_container .react-multi-carousel-list {
-    margin: 0px auto;
-  }
 
