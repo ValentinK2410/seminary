@@ -1,13 +1,13 @@
-import image1 from '../../../images/carouselmages/image1.jpeg';
-import image2 from '../../../images/carouselmages/image2.jpeg';
-import image3 from '../../../images/carouselmages/image3.jpeg';
-import image4 from '../../../images/carouselmages/image4.jpeg';
-import image5 from '../../../images/carouselmages/image5.jpeg';
-import image6 from '../../../images/carouselmages/image6.jpeg';
-import image7 from '../../../images/carouselmages/image7.jpeg';
-import image8 from '../../../images/carouselmages/image8.jpeg';
-import image9 from '../../../images/carouselmages/image9.jpeg';
-import image10 from '../../../images/carouselmages/image10.jpeg';
+import image1 from '../../../images/carouselmages/apologetics.jpeg';
+import image2 from '../../../images/carouselmages/studyBible.jpg';
+import image3 from '../../../images/carouselmages/history.jpeg';
+import image4 from '../../../images/carouselmages/soulsupport.jpeg';
+import image5 from '../../../images/carouselmages/churchleadership.jpeg';
+import image6 from '../../../images/carouselmages/preaching.jpeg';
+import image7 from '../../../images/carouselmages/bogoslovie.jpeg';
+import image8 from '../../../images/carouselmages/mission.jpeg';
+import image9 from '../../../images/carouselmages/goodnews.jpeg';
+import image10 from '../../../images/carouselmages/cornerstone.jpeg';
 
 export const divContent = [
   {

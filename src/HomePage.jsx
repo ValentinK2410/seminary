@@ -16,7 +16,7 @@ function HomePage() {
   return (
     <Layout>
       <Banner />
-      <AboutUs />
+       <AboutUs />
       <Categories />
       <Courses />
       <WhyChooseUs />
@@ -24,7 +24,7 @@ function HomePage() {
       <Educations />
       <AboutCampus />
       <StudentsFeedback />
-      <ComingEvents />
+      <ComingEvents /> 
     </Layout>
   );
 }

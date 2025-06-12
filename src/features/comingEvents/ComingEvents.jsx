@@ -33,7 +33,7 @@ export const ComingEvents = () => {
                 {event.icon}
                 <article className='flex flex-col flex-grow lg:flex-row lg:items-center justify-center gap-10'>
                   <div className='flex flex-col justify-center gap-3'>
-                    <p className="text-sm text-zinc-600">{event.info}</p>
+                    <div className="text-sm text-zinc-600">{event.info}</div>
                     <h4
                       id={`event-title-${event.id}`}
                       style={{ lineHeight: '1.2' }}
@@ -57,11 +57,11 @@ export const ComingEvents = () => {
           <img src={getDiplomaImage} alt="a young woman" className='self-center' />
           <div className='flex flex-col lg:flex-row gap-5'>
               <p className="text-2xl  xl:text-5xl text-center sm:text-left leading-snug text-indigo-50 max-w-[18ch]">
-            Получи сертификат или диплом в МБС
-          </p>
-          <SecondaryButton className='h-[60px] mb-5 text-md xl:self-center uppercase truncate'>
-              <span className='hidden sm:inline-block lg:hidden xl:inline-block mr-1'>Посмотреть </span>  все курсы <span className="ml-2 mt-1 transition-colors duration-200">→</span>
-          </SecondaryButton>
+                Получи сертификат или диплом в МБС
+              </p>
+              <SecondaryButton className='h-[60px] mb-5 text-md xl:self-center uppercase truncate'>
+                <span className='hidden sm:inline-block lg:hidden xl:inline-block mr-1'>Посмотреть </span>  все курсы <span className="ml-2 mt-1 transition-colors duration-200">→</span>
+              </SecondaryButton>
           </div>
         </div>
       </article>
