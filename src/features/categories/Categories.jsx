@@ -154,9 +154,6 @@ export const Categories = () => {
                           objectFit: 'cover',
                           borderRadius: '8px',
                         }}
-                        onError={(e) => {
-                          e.currentTarget.src = fallback;
-                        }}
                       />
                       <h4
                         id={`item-title-${item.id}`}
