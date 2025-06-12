@@ -26,7 +26,7 @@ export const AboutCampus = () => {
           <h3 className='text-2xl sm:text-4xl sm:text-left text-indigo-900 max-w-[29ch]'>
             Кампус богословской семинарии
           </h3>  
-          <p className='text-zinc-600 text-left'>
+          <p className='text-zinc-600 text-left max-w-[90ch]'>
             Кампус МБС - это благословенное место, где вы не только сможете пройти курсы у лучших преподавателей братства ЕХБ, но и поговорить с наставником, укрепиться на семинарском богослужении, посетить музей Библии и истории братства. 
           </p>
     

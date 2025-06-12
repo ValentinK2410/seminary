@@ -22,7 +22,7 @@ export const StudentsFeedback = () => {
           <h3 className="mx-auto text-2xl sm:text-4xl text-indigo-900 text-left max-w-[40ch]">
             Отзывы студентов семинарии МБС
           </h3>
-          <p className="w-full text-zinc-600 max-w-[85ch] text-center sm:text-left">
+          <p className="w-full text-zinc-600 max-w-[90ch] text-center sm:text-left">
             Узнайте, что настоящие студенты богословской семинарии МБС думают об учебном процессе, преподавателях и атмосфере. Их честные отзывы помогут вам лучше понять качество образования и студенческую жизнь.
           </p>
         </div>

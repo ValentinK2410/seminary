@@ -13,9 +13,9 @@ export const ComingEvents = () => {
           <h3 className='text-2xl sm:text-4xl text-center  text-indigo-900 max-w-[29ch]'>
             Предстоящие события
           </h3>  
-          <p className='text-zinc-600 text-center max-w-[55ch'>
-            Узнайте, какие образовательные возможности доступны в богословской семинарии на кампусе и в регионах.
-          </p>
+   <p className="text-zinc-600 text-left max-w-[90ch]">
+  Откройте для себя разнообразные образовательные программы богословской семинарии МБС — как на главном кампусе, так и в регионах. Вас ждут курсы, семинары и обучение, адаптированные под современные реалии и потребности служения.
+</p>
         </div>
       </article>
 
@@ -53,7 +53,7 @@ export const ComingEvents = () => {
         </div>
 
 
-        <div className="mt-20 w-full ux:w-fit px-4 pt-10 sm:px-16 sm:pb-0 flex flex-col sm:flex-row  max-w-7xl mx-auto  bg-indigo-500 rounded-xl gap-10 items-center justify-center">
+        <div className="mt-10 w-full ux:w-fit px-4 pt-10 sm:px-16 sm:pb-0 flex flex-col sm:flex-row  max-w-7xl mx-auto  bg-indigo-500 rounded-xl gap-10 items-center justify-center">
           <img src={getDiplomaImage} alt="a young woman" className='self-center' />
           <div className='flex flex-col lg:flex-row gap-5'>
               <p className="text-2xl  xl:text-5xl text-center sm:text-left leading-snug text-indigo-50 max-w-[18ch]">

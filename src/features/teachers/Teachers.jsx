@@ -7,14 +7,18 @@ export const Teachers = () => {
   return (
     <section className="p-6 sm:p-20  flex items-center">
       <div className="w-full max-w-7xl mx-auto  flex flex-col  gap-16 ">
-        <div className="flex text-center flex-col justify-center items-center space-y-5">
+        <div className="flex text-center flex-col justify-center items-center gap-5">
           <LightBulbTopic topic='Преподаватели МБС' />
           <h3 className="mx-auto text-2xl sm:text-4xl text-indigo-900  max-w-[30ch]">
            В семинарии вы встретитесь с лучшими преподавателями
           </h3>
-          <p className="w-full max-w-[85ch] text-left lg:text-center">
-            Преподаватели богословской семинарии МБС – опытные служители церкви и эксперты в своей области знаний 
+          <p className="w-full max-w-[90ch] text-left ">
+            Преподаватели богословской семинарии МБС – это не просто академики, а преданные служители церкви, каждый из которых обладает многолетним практическим опытом и глубокими знаниями в своей области. Они вдохновляют студентов своим примером, делятся богословской мудростью и помогают формировать прочное духовное основание для служения и жизни в вере.
           </p>
+
+          <PrimaryButton className='mt-6 w-fit self-center'>
+            Все преподаватели <span className="ml-2 mt-1 transition-colors duration-200">→</span>
+          </PrimaryButton>
         </div>
 
         <div className="flex flex-wrap gap-10 justify-center">
@@ -43,13 +47,7 @@ export const Teachers = () => {
           ))}
         </div>
 
-        <PrimaryButton className='w-fit self-center'>
-          Все преподаватели <span className="ml-2 mt-1 transition-colors duration-200">→</span>
-        </PrimaryButton>
-
           {/* example for putting images here <img src={aboutCampus} alt="about us" className='rounded-lg max-h-[500px]' /> */}
-
-          
       </div>
     </section>
   );

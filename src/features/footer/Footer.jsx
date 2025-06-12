@@ -89,7 +89,7 @@ export const Footer = () => {
               placeholder="Ваш email" 
               className='w-full max-h-[50px]'
             />
-          <SecondaryButton className="!py-2 xs:w-fit !text-gray-400 !border-gray-300 hover:!text-black hover:bg-gray-200 hover:!border-black">
+          <SecondaryButton className="!py-2 xs:w-fit !text-gray-400 !border-gray-300 hover:!text-black hover:!bg-gray-200 hover:!border-black">
             Подписаться
           </SecondaryButton>
           </form>
