@@ -7,7 +7,8 @@ export const AboutCampus = () => {
   return (
     <section className='w-full p-6 sm:p-20 flex'>
       <article className='mx-auto max-w-7xl flex gap-10 lg:gap-20 items-center flex-col-reverse lg:flex-row'>
-        <div className='overflow-hidden w-full max-w-xl aspect-video rounded-xl shadow-lg'>
+
+        <div className='md:mr-auto overflow-hidden w-full max-w-xl aspect-video rounded-xl shadow-lg'>
         <iframe
           src="https://vk.com/video_ext.php?oid=-211143968&id=456239230&hd=3"
           width="100%"
