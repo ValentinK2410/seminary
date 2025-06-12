@@ -19,9 +19,9 @@ export const ComingEvents = () => {
         </div>
       </article>
 
-      <article className=''>
+      <article className='mx-auto max-w-7xl'>
 
-        <div className="mx-auto flex flex-col gap-10 justify-center lg:w-fit">
+        <div className="w-full mx-auto flex flex-col gap-10 justify-center">
           {listOfEvents.map((event, index) => (
             <div
               key={event.id}
@@ -53,7 +53,7 @@ export const ComingEvents = () => {
         </div>
 
 
-        <div className="mt-20 w-full ux:w-fit p-4 pt-10 sm:p-6 sm:pb-0 flex flex-col sm:flex-row  max-w-7xl mx-auto  bg-indigo-500 rounded-xl gap-10 items-center justify-center">
+        <div className="mt-20 w-full ux:w-fit px-4 pt-10 sm:px-16 sm:pb-0 flex flex-col sm:flex-row  max-w-7xl mx-auto  bg-indigo-500 rounded-xl gap-10 items-center justify-center">
           <img src={getDiplomaImage} alt="a young woman" className='self-center' />
           <div className='flex flex-col lg:flex-row gap-5'>
               <p className="text-2xl  xl:text-5xl text-center sm:text-left leading-snug text-indigo-50 max-w-[18ch]">
