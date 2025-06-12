@@ -1,5 +1,5 @@
 import { PrimaryButton } from '../../componentLibrary/PrimaryButton'
-import aboutUsPhoto from '../../images/aboutUsPhoto.jpg';
+import aboutUsPhoto from '../../images/aboutUsPhoto.jpeg';
 import { LightBulbTopic } from '../../components/LightBulbTopic';
 
 export const AboutUs = () => {
