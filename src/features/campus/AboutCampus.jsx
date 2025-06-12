@@ -7,6 +7,19 @@ export const AboutCampus = () => {
   return (
     <section className='w-full p-6 sm:p-20 flex'>
       <article className='mx-auto max-w-7xl flex gap-10 lg:gap-20 items-center flex-col-reverse lg:flex-row'>
+        <div className='overflow-hidden w-full max-w-xl aspect-video rounded-xl shadow-lg'>
+        <iframe
+          src="https://vk.com/video_ext.php?oid=-211143968&id=456239230&hd=3"
+          width="100%"
+          height="100%"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          frameBorder="0"
+          title="VK Video"
+          className="w-full h-full"
+          ></iframe>
+        </div>
+
         <div className='w-full  mx-auto flex flex-col items-center sm:items-start text-center  justify-center gap-5'>
            <LightBulbTopic topic='Прекрасные условия' />
           <h3 className='text-2xl sm:text-4xl sm:text-left text-indigo-900 max-w-[29ch]'>
@@ -21,9 +34,7 @@ export const AboutCampus = () => {
           </PrimaryButton>
           
         </div>
-        <div className='overflow-hidden'>
-          <img src={aboutCampus} alt="about us" className='rounded-lg max-h-[500px]' />
-        </div>
+
       </article>
     </section>
   )

@@ -47,6 +47,9 @@ export const Teachers = () => {
           Все преподаватели <span className="ml-2 mt-1 transition-colors duration-200">→</span>
         </PrimaryButton>
 
+          {/* example for putting images here <img src={aboutCampus} alt="about us" className='rounded-lg max-h-[500px]' /> */}
+
+          
       </div>
     </section>
   );
