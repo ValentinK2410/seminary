@@ -65,7 +65,7 @@ export const Categories = () => {
   };
 
   return (
-    <section className="bg-indigo-25 p-6 sm:p-20 flex items-center">
+    <section id='ресурсы' className="bg-indigo-25 p-6 sm:p-20 flex items-center">
       <div className="w-full max-w-7xl mx-auto">
         <div className="flex text-center flex-col justify-center items-center space-y-5">
           <LightBulbTopic topic="Ресурсы для роста и служения" />

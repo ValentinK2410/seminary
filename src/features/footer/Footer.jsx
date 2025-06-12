@@ -10,7 +10,7 @@ import { Input } from '../../componentLibrary/Input';
 
 export const Footer = () => {
   return (
-    <footer className="bg-indigo-25 px-6 sm:px-20">
+    <footer id='контакты' className="bg-indigo-25 px-6 sm:px-20">
       <div
         className="w-full max-w-7xl mx-auto grid gap-10 py-[100px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >

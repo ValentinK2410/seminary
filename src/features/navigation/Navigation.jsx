@@ -78,7 +78,7 @@ export const Navigation = () => {
           </button>
 
           <article className='h-full justify-center flex flex-col gap-4 p-6'>
-            <MainNav />
+            <MainNav onLinkClick={() => setMenuOpen(false)} />
           </article>
         </div>
 
