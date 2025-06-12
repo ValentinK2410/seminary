@@ -13,14 +13,13 @@ export const ComingEvents = () => {
           <h3 className='text-2xl sm:text-4xl text-center  text-indigo-900 max-w-[29ch]'>
             Предстоящие события
           </h3>  
-   <p className="text-zinc-600 text-left max-w-[90ch]">
-  Откройте для себя разнообразные образовательные программы богословской семинарии МБС — как на главном кампусе, так и в регионах. Вас ждут курсы, семинары и обучение, адаптированные под современные реалии и потребности служения.
-</p>
+          <p className="text-zinc-600 text-left max-w-[90ch]">
+            Откройте для себя разнообразные образовательные программы богословской семинарии МБС — как на главном кампусе, так и в регионах. Вас ждут курсы, семинары и обучение, адаптированные под современные реалии и потребности служения.
+          </p>
         </div>
       </article>
 
       <article className='mx-auto max-w-7xl'>
-
         <div className="w-full mx-auto flex flex-col gap-10 justify-center">
           {listOfEvents.map((event, index) => (
             <div
@@ -51,7 +50,6 @@ export const ComingEvents = () => {
             </div>
           ))}
         </div>
-
 
         <div className="mt-10 w-full ux:w-fit px-4 pt-10 sm:px-16 sm:pb-0 flex flex-col sm:flex-row  max-w-7xl mx-auto  bg-indigo-500 rounded-xl gap-10 items-center justify-center">
           <img src={getDiplomaImage} alt="a young woman" className='self-center' />

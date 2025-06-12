@@ -15,9 +15,9 @@
   transition: width 0.3s ease;  
 }
 
-  .nav-link {
-    font-size: xx-large;
-  }
+.nav-link {
+  font-size: xx-large;
+}
 
 @media (min-width: 1120px) {
   .nav-link {

@@ -3,8 +3,6 @@ import image01 from "../../../images/eventImages/01.jpg";
 import image02 from "../../../images/eventImages/02.jpg";
 import image03 from "../../../images/eventImages/03.jpg";
 
- 
-
 export const listOfEvents = [
   {
     id: 1,

@@ -1,4 +1,3 @@
-// MainNav.jsx
 import { NavLink } from './NavLink';
 import './MainNav.css';
 

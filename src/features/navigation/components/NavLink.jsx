@@ -1,4 +1,3 @@
-// NavLink.jsx
 import './NavLink.css';
 
 export const NavLink = ({ name, onClick }) => {

@@ -1,5 +1,4 @@
 import { SecondaryButton } from '../../componentLibrary/SecondaryButton'
- 
 import { Logo } from '../../images/Logo';
 import bigBgImage from '../../images/wallpaper3.jpg';
 

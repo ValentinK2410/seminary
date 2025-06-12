@@ -3,11 +3,11 @@ import { Logo } from '../../images/Logo';
 import { LogoText } from './components/LogoText';
 import { MainNav } from './components/MainNav';
 import { Menu, X } from 'lucide-react';
-import './Navigation.css';
 import { CategoryMenuBtn } from './components/CategoryMenuBtn';
 import Search from '../../components/Search';
 import { SignInModal } from './components/SignInModal';
 import { SecondaryButton } from '../../componentLibrary/SecondaryButton';
+import './Navigation.css';
 
 export const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);

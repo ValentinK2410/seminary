@@ -46,8 +46,6 @@ export const Teachers = () => {
             </div>
           ))}
         </div>
-
-          {/* example for putting images here <img src={aboutCampus} alt="about us" className='rounded-lg max-h-[500px]' /> */}
       </div>
     </section>
   );
