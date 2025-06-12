@@ -15,16 +15,16 @@ import { AboutCampus } from './features/campus/AboutCampus';
 function HomePage() {
   return (
     <Layout>
-      <Banner />
+       <Banner />
       <AboutUs />
-      <Categories />
+       <Categories />  
       <Courses />
-      <WhyChooseUs />
+       <WhyChooseUs />
       <Teachers />
       <Educations />
       <AboutCampus />
       <StudentsFeedback />
-      <ComingEvents />
+      <ComingEvents /> 
     </Layout>
   );
 }
