@@ -21,36 +21,36 @@ export const ComingEvents = () => {
 
       <article className=''>
 
-                <div className="mx-auto flex flex-col gap-10 justify-center lg:w-fit">
-                  {listOfEvents.map((event, index) => (
-                    <div
-                      key={event.id}
-                      className="snap-start w-full h-fit border border-indigo-300 bg-white rounded-lg shadow-md pt-3 pb-3  hover:shadow-lg transition-shadow duration-300"
-                      role="group"
-                      aria-labelledby={`event-title-${event.id}`}
+        <div className="mx-auto flex flex-col gap-10 justify-center lg:w-fit">
+          {listOfEvents.map((event, index) => (
+            <div
+              key={event.id}
+              className="snap-start w-full h-fit border border-indigo-300 bg-white rounded-lg shadow-md pt-3 pb-3  hover:shadow-lg transition-shadow duration-300"
+              role="group"
+              aria-labelledby={`event-title-${event.id}`}
+            >
+              <div className="h-full px-4 flex flex-col xs:flex-row justify-between gap-5">
+                {event.icon}
+                <article className='flex flex-col flex-grow lg:flex-row lg:items-center justify-center gap-10'>
+                  <div className='flex flex-col justify-center gap-3'>
+                    <p className="text-sm text-zinc-600">{event.info}</p>
+                    <h4
+                      id={`event-title-${event.id}`}
+                      style={{ lineHeight: '1.2' }}
+                      className="text-lg font-semibold text-indigo-900"
                     >
-                      <div className="h-full px-4 flex flex-col xs:flex-row justify-between gap-5">
-                        {event.icon}
-                        <article className='flex flex-col flex-grow lg:flex-row lg:items-center justify-center gap-10'>
-                          <div className='flex flex-col justify-center gap-3'>
-                            <p className="text-sm text-zinc-600">{event.info}</p>
-                            <h4
-                              id={`event-title-${event.id}`}
-                              style={{ lineHeight: '1.2' }}
-                              className="text-lg font-semibold text-indigo-900"
-                            >
-                              {event.title}
-                            </h4>
-                            <p className='max-w-[52ch]'> {event.description} </p>
-                          </div>
-                          <PrimaryButton className='h-[40px] text-md ux:self-start lg:self-center '>
-                            Перейти
-                          </PrimaryButton>
-                        </article>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                      {event.title}
+                    </h4>
+                    <p className='max-w-[52ch]'> {event.description} </p>
+                  </div>
+                  <PrimaryButton className='h-[40px] text-md ux:self-start lg:self-center '>
+                    Перейти
+                  </PrimaryButton>
+                </article>
+              </div>
+            </div>
+          ))}
+        </div>
 
 
         <div className="mt-20 w-full ux:w-fit p-4 pt-10 sm:p-6 sm:pb-0 flex flex-col sm:flex-row  max-w-7xl mx-auto  bg-indigo-500 rounded-xl gap-10 items-center justify-center">
