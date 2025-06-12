@@ -29,9 +29,9 @@ export const ComingEvents = () => {
               role="group"
               aria-labelledby={`event-title-${event.id}`}
             >
-              <div className="h-full px-4 flex flex-col xs:flex-row justify-between gap-5">
+              <div className="h-full px-4 flex flex-col xs:flex-row justify-between gap-5 xs:gap-10">
                 {event.icon}
-                <article className='flex flex-col flex-grow lg:flex-row lg:items-center justify-center gap-10'>
+                <article className='flex flex-col flex-grow lg:flex-row lg:items-center justify-between gap-10'>
                   <div className='flex flex-col justify-center gap-3'>
                     <div className="text-sm text-zinc-600">{event.info}</div>
                     <h4

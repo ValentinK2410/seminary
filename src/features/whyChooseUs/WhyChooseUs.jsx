@@ -4,8 +4,8 @@ import { CardGrid } from './components/CardGrid';
 
 export const WhyChooseUs = () => {
   return (
-    <section className=' bg-blue-800  p-6 sm:p-20 flex flex-col xl:flex-row gap-10 xl:items-center'>
-      <div className='w-full max-w-7xl mx-auto'>
+    <section className=' bg-blue-800  p-6 sm:p-20 flex flex-col '>
+      <div className='w-full max-w-7xl mx-auto flex flex-col  gap-10 xl:flex-row xl:items-center'>
         <main className='w-full max-w-7xl mx-auto'>
           <div className='space-y-5'>
             <LightBulbTopic topic='Почему стоит выбрать МБС?' textColor="text-yellow-300" />
