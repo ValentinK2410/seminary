@@ -22,9 +22,9 @@ export const Navigation = () => {
   };
 
   return (
-    <section className='fixed w-full px-6 md:px-20 justify-between bg-blue-800 flex shadow z-10'>
-      <article className='mx-auto max-w-7xl w-full'>
-        <div className='w-full flex items-center'>
+    <section className='fixed w-full  px-6 md:px-20  bg-blue-800 flex shadow flex z-10'>
+      <article className='max-w-7xl w-full mx-auto'>
+        <div className='w-full flex items-center justify-between'>
           <main className='w-full mx-auto flex gap-4 justify-between items-center'>
             <article className='flex gap-1 items-center'> 
               <div className='py-2 w-fit text-indigo-50 flex items-center justify-between min-w-10'>
