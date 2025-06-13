@@ -8,6 +8,8 @@ import { Icon_youtube } from '../../images/Icon_youtube';
 import { Icon_x } from '../../images/Icon_x';
 import { Input } from '../../componentLibrary/Input';
 
+import { MapPin, Phone, Mail } from 'lucide-react';
+
 export const Footer = () => {
   return (
     <footer id='контакты' className="bg-indigo-25 px-6 sm:px-20">
@@ -31,29 +33,58 @@ export const Footer = () => {
             Московская Богословская семинария (МБС) — это учебное заведение, которое предлагает богословское образование и подготовку для служения в церкви.
           </p>
 
-          <ul className='space-y-2'>
+          {/* <ul className='space-y-2'>
             <li className='flex items-center gap-2 text-zinc-600'>
               <Icon_map className="w-3 text-indigo-600" />
-              Yarra Park, Melbourne, Australia
+              111524, Москва, ул.Перовская, д.4а
             </li>
             <li className='flex items-center gap-2 text-zinc-600'>
               <Icon_phone className="w-3 text-indigo-600" />
-              <a href="tel:+4733378901" className="hover:text-indigo-600">+(61) 485-826-710</a>
+              <a href="tel:+74957303580" className="hover:text-indigo-600">+7 (495) 730-35-80</a>
+            </li>
+            <li className='flex items-center gap-2 text-zinc-600'>
+              <Icon_email className="w-3 text-indigo-600" />
+              <a href="mailto:info@seminary.moscow" className="hover:text-indigo-600">info@seminary.moscow</a>
+            </li>
+          </ul> */}
+
+          <ul className='space-y-2'>
+            <li className='flex items-start gap-2 text-zinc-600'>
+              <MapPin className="w-4 h-4 mt-1 text-indigo-600" />
+              111524, Москва, ул.Перовская, д.4а
+            </li>
+            <li className='flex items-center gap-2 text-zinc-600'>
+              <Phone className="w-4 h-4 text-indigo-600" />
+              <a href="tel:+74957303580" className="hover:text-indigo-600">
+                +7 (495) 730-35-80
+              </a>
+            </li>
+            <li className='flex items-center gap-2 text-zinc-600'>
+              <Mail className="w-4 h-4 text-indigo-600" />
+              <a href="mailto:info@seminary.moscow" className="hover:text-indigo-600">
+                info@seminary.moscow
+              </a>
             </li>
           </ul>
+
         </div>
 
         {/* Колонка 2 — Быстрые ссылки */}
         <div className="order-2 sm:order-3 md:order-3 lg:order-3 xl:order-2">
           <h3 className='text-lg text-zinc-600 font-semibold mb-4'>Быстрые ссылки</h3>
-          <ul className='space-y-2'>
-            {['Что же нам тут писать', 'Понятия не имею', 'Ссылки тут какие', 'Нужны подсказки'].map((item) => (
-              <li key={item}>
+         
+          <ul className="space-y-2">
+            {[
+              { label: 'Ресурсы семинарии МБС', href: '#ресурсы' },
+              { label: 'Курсы на базе семинарии', href: '#курсы' },
+              { label: 'Программы онлайн обучения', href: '#программы' },
+            ].map(({ label, href }) => (
+              <li key={label}>
                 <a
-                  href={`/${item.toLowerCase().replace(' ', '-')}`}
-                  className='text-zinc-600 hover:text-indigo-600 transition-colors'
+                  href={href}
+                  className="text-zinc-600 hover:text-indigo-600 transition-colors"
                 >
-                  {item}
+                  {label}
                 </a>
               </li>
             ))}
@@ -63,18 +94,25 @@ export const Footer = () => {
         {/* Колонка 3 — Соцсети, скрыта на lg и ниже */}
         <div className="hidden order-2 xl:block xl:order-3">
           <h3 className='text-lg text-zinc-600 font-semibold mb-4'>Социальные сети</h3>
-          <ul className='space-y-2'>
-            {['Facebook', 'X.com', 'Instagram', 'LinkedIn'].map((social) => (
-              <li key={social}>
+          <ul className="space-y-2">
+            {[
+              { label: 'МБС в VK', href: 'https://facebook.com' },
+              { label: 'МБС в RuTube', href: 'https://x.com' },
+              { label: 'МБС в Telegram', href: 'https://instagram.com' },
+            ].map(({ label, href }) => (
+              <li key={label}>
                 <a
-                  href={`https://${social.toLowerCase()}.com`}
-                  className='text-zinc-600 hover:text-indigo-600 transition-colors'
+                  href={href}
+                  className="text-zinc-600 hover:text-indigo-600 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {social}
+                  {label}
                 </a>
               </li>
             ))}
           </ul>
+
         </div>
 
         {/* Колонка 4 — Подписка */}
@@ -97,7 +135,7 @@ export const Footer = () => {
       </div>
 
       <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-6 justify-between border-t border-zinc-200 py-6 text-left text-zinc-600">
-        <p>&copy; {new Date().getFullYear()} Московская Богословская Семинария. Все права защищены.</p>
+        <p className='max-w-[700px]' >&copy; {new Date().getFullYear()} — Автономная некоммерческая организация дополнительного профессионального образования "Богословская Семинария" в г.Москве</p>
         <div className="social-copyright">
           <ul className="flex space-x-4 ml-auto">
             <li>
