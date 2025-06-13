@@ -18,7 +18,7 @@ function HomePage() {
       <Banner />
       <AboutUs />
       <Categories />
-      {/* <Courses /> */}
+      <Courses />
       <WhyChooseUs />
       <Teachers />
       <Educations />
