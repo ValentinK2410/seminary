@@ -2,10 +2,18 @@ import { PrimaryButton } from '../../componentLibrary/PrimaryButton'
 import aboutUsPhoto from '../../images/aboutUsPhoto.jpeg';
 import { LightBulbTopic } from '../../components/LightBulbTopic';
 
+// do NOT delete: add scroll-mt-14 in courses.jsx
+
 export const AboutUs = () => {
   return (
-    <section className='w-full  p-6 sm:p-20 flex'>
-      <article className='mx-auto max-w-7xl flex gap-10 lg:gap-20 items-center flex-col-reverse lg:flex-row'>
+    <section id='about-us' className='w-full  p-6 sm:p-20 flex'>
+      <article className='scroll-mt-14 mx-auto max-w-7xl flex gap-10 lg:gap-20 items-center flex-col lg:flex-row'>
+        <div className='overflow-hidden'>
+          <img src={aboutUsPhoto} alt="about us" 
+           style={{ transform: 'scaleX(-1)' }}
+           className='rounded-lg' />
+        </div>
+
         <div className='w-full  mx-auto flex flex-col items-center sm:items-start text-center  justify-center gap-5'>
            <LightBulbTopic topic='Учитесь там, где вам удобно и когда вам удобно' />
           <h3 className='text-2xl sm:text-4xl sm:text-left text-indigo-900 max-w-[29ch]'>
@@ -20,9 +28,6 @@ export const AboutUs = () => {
           <PrimaryButton className='w-fit'>
             Стать студентом МБС <span className="ml-2 mt-1 transition-colors duration-200">→</span>
           </PrimaryButton>
-        </div>
-        <div className='overflow-hidden'>
-          <img src={aboutUsPhoto} alt="about us" className='rounded-lg' />
         </div>
       </article>
     </section>

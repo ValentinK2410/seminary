@@ -1,7 +1,5 @@
 import { Logo } from '../../images/Logo';
 import { SecondaryButton } from '../../componentLibrary/SecondaryButton';
-import { Icon_map } from '../../images/Icon_map';
-import { Icon_phone } from '../../images/Icon_phone';
 import { Icon_facebook } from '../../images/Icon_facebook';
 import { Icon_instagram } from '../../images/Icon_instagram';
 import { Icon_youtube } from '../../images/Icon_youtube';
@@ -12,7 +10,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 export const Footer = () => {
   return (
-    <footer id='контакты' className="bg-indigo-25 px-6 sm:px-20">
+    <footer id='contacts' className="scroll-mt-14 bg-indigo-25 px-6 sm:px-20">
       <div
         className="w-full max-w-7xl mx-auto grid gap-10 py-[100px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
