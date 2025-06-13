@@ -28,7 +28,7 @@ const NavLink = ({ name, linkId, onClick }) => {
     if (typeof onClick === 'function') {
       onClick(linkId);
     }
-    // Optional: scroll into view manually
+    // 0ptional: scroll into view manually
     const target = document.getElementById(linkId);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
