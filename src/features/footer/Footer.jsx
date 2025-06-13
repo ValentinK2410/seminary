@@ -1,5 +1,5 @@
 import { Logo } from '../../images/Logo';
-import { PrimaryButton } from '../../componentLibrary/PrimaryButton';
+import { SecondaryButton } from '../../componentLibrary/SecondaryButton';
 import { Icon_map } from '../../images/Icon_map';
 import { Icon_phone } from '../../images/Icon_phone';
 import { Icon_facebook } from '../../images/Icon_facebook';
@@ -10,7 +10,7 @@ import { Input } from '../../componentLibrary/Input';
 
 export const Footer = () => {
   return (
-    <footer className="bg-indigo-25 px-6 sm:px-20">
+    <footer id='контакты' className="bg-indigo-25 px-6 sm:px-20">
       <div
         className="w-full max-w-7xl mx-auto grid gap-10 py-[100px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
@@ -83,15 +83,15 @@ export const Footer = () => {
           <p className='text-zinc-600 mb-4'>
             Подпишитесь на нашу рассылку, чтобы получать последние новости и обновления.
           </p>
-          <form className='space-y-3 flex flex-col gap-3'>
+          <form className='flex flex-col gap-2'>
             <Input 
               type="email" 
               placeholder="Ваш email" 
               className='w-full max-h-[50px]'
             />
-            <PrimaryButton className='w-full bg-gray-500 border-gray-500 justify-center ux:w-fit'>
-              Подписаться
-            </PrimaryButton>
+          <SecondaryButton className="!py-2 xs:w-fit !text-gray-400 !border-gray-300 hover:!text-black hover:!bg-gray-200 hover:!border-black">
+            Подписаться
+          </SecondaryButton>
           </form>
         </div>
       </div>
@@ -122,7 +122,6 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-
       </div>
     </footer>
   )

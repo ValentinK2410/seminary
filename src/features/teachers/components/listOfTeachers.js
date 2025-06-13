@@ -1,66 +1,67 @@
-import image01 from "../../../images/educationImages/01.png";
-import image02 from "../../../images/educationImages/02.png";
-import image03 from "../../../images/educationImages/03.png";
+import image01 from "../../../images/teacherImages/01.png";
+import image02 from "../../../images/teacherImages/02.png";
+import image03 from "../../../images/teacherImages/03.png";
+import image04 from "../../../images/teacherImages/04.png";
 
 export const listOfTeachers = [
   {
     id: 1,
     icon: (
-      <div className="w-44 h-32 rounded-xl relative overflow-hidden">
+      <div className="w-64 h-60 rounded-md relative overflow-hidden">
         <img
           src={image01}
-          alt="Lite программа"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="фото: Михаил Вячеславович Иванов"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
       </div>
     ),
-    title: "Lite программа",
-    info: "Дипломная программа",
-    description: "Научитесь вести беседы о Библии и отвечать на важные вопросы.",
+    title: "Михаил Вячеславович Иванов",
+    info: "Систематическое богословие и церковная история",
+    description: "Специализируется на систематическом богословии и истории христианской церкви.",
   },
   {
     id: 2,
     icon: (
-      <div className="w-44 h-32 rounded-xl relative overflow-hidden">
+      <div className="w-64 h-60 rounded-md relative overflow-hidden">
         <img
           src={image02}
-          alt="Бакалавриат"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="фото: Марина Владимировна Ананка-Ганина"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
       </div>
     ),
-    title: "Бакалавриат",
-    info: "Бакалаврская программа",
-    description: "Развивайте знания и навыки в богословии и служении.",
+    title: "Марина Владимировна Ананка-Ганина",
+    info: "Христианское образование",
+    description: "Специалист в области христианского образования и педагогики.",
   },
   {
     id: 3,
     icon: (
-      <div className="w-44 h-32 rounded-xl relative overflow-hidden">
+      <div className="w-64 h-60 rounded-md relative overflow-hidden">
         <img
           src={image03}
-          alt="Магистратура"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="фото Александр Владимирович Митрофанов"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
       </div>
     ),
-    title: "Магистратура",
-    info: "Дипломная программа",
-    description: "Углублённое изучение Библии и практики христианского лидерства.",
+    title: "Александр Владимирович Митрофанов",
+    info: "Религиоведения",
+    description: "Эксперт в области религиоведения и межконфессионального диалога.",
   },
   {
     id: 4,
     icon: (
-      <div className="w-44 h-32 rounded-xl relative overflow-hidden">
+      <div className="w-64 h-60 rounded-md relative overflow-hidden">
         <img
-          src={image01}
-          alt="Дипломные программы"
-          className="absolute inset-0 w-full h-full object-cover"
+          src={image04}
+          alt="фото: Геннадий Александрович Савин"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
       </div>
     ),
-    title: "Дипломные программы",
-    info: "Дипломная программа",
-    description: "Базовая подготовка для служения и духовного роста.",
+    title: "Геннадий Александрович Савин",
+    info: "Герменевтика",
+    description: "Занимается толкованием священных текстов и герменевтическими методами.",
   },
 ];
