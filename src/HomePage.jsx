@@ -1,4 +1,3 @@
-
 import { AboutUs } from './features/aboutUs/AboutUs';
 import { Courses } from './features/courses/Courses';
 import { Categories } from './features/categories/Categories';

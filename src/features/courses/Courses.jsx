@@ -1,5 +1,5 @@
 import { LightBulbTopic } from "../../components/LightBulbTopic";
-import { SingleCourseCard } from "./components/SingleCourseCard";
+import { CardCourse } from "./components/CardCourse";
 import image01 from './../../images/coursesImages/bibliologiya.jpg';
 import image02 from "./../../images/coursesImages/gomiletika.jpg";
 import image03 from "./../../images/coursesImages/Hristologiay.png";
@@ -15,7 +15,7 @@ const cardCourse = [
     name: "Библиология",
     link: "/courses/concurs",
     description:
-      "В этом курсе вы откроете для себя путь Священного Писания — от Божественного откровения до страниц современной Библии, узнаете, как Слово Божье сохранялось, и дошло до нас.",
+      "В этом курсе вы откроете для себя путь Священного Писания, узнаете, как Слово Божье сохранялось, и дошло до нас.",
     image: image01,
     category: "БИБЛЕИСТИКА",
   },
@@ -24,7 +24,7 @@ const cardCourse = [
     name: "Гомилетика",
     link: "/courses/concurs",
     description:
-      "Курс «Гомилетика» предназначен для начинающих проповедников, служителей церкви и всех, кто хочет развить навыки публичного изложения Священного Писания.",
+      "Курс «Гомилетика» предназначен для всех, кто хочет развить навыки публичного изложения Священного Писания.",
     image: image02,
     category: "СЛУЖЕНИЕ ПРОПОВЕДНИКА",
   },
@@ -85,23 +85,24 @@ const cardCourse = [
     category: "АПОЛОГЕТИКА",
   },
 ];
+
 export const Courses = () => {
   return (
-    <section className="w-full  p-6 sm:p-20">
-      <div className="w-full max-w-7xl mx-auto flex justify-between flex-col space-y-5  items-center sm:items-start ">
+    <section className="p-6 sm:p-20 flex flex-col gap-10">
+      <main className=" max-w-7xl mx-auto flex flex-col gap-5 items-center justify-center">
         <LightBulbTopic topic="Курсы на базе МБС" />
-        <h3 className="text-2xl sm:text-4xl text-indigo-900 max-w-[29ch]">
+        <h3 className="text-center text-2xl sm:text-4xl text-indigo-900 max-w-[29ch]">
           Откройте для себя курсы богословской семинарии МБС
         </h3>
-        <p className="text-zinc-600 text-left pb-4">
-          Семинария предлагает различные формы обучения, поэтому вы найдете то,
-          что подойдет именно вам
+        <p className="text-center text-zinc-600 pb-4 max-w-[65ch]">
+          Семинария предлагает различные формы обучения, поэтому вы найдете то, что подойдет именно вам.
         </p>
-      </div>
-      <div className="justify-around flex-wrap columns-3 max-w-7xl mx-auto grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6">
+      </main>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {cardCourse.map((course) => (
-          <div>
-            <SingleCourseCard
+          <div key={course.id}>
+            <CardCourse
               Id={course.id}
               Name={course.name}
               Desc={course.description}

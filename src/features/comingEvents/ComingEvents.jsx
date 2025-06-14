@@ -1,12 +1,10 @@
 import { PrimaryButton } from '../../componentLibrary/PrimaryButton';
-import { SecondaryButton } from '../../componentLibrary/SecondaryButton';
 import { LightBulbTopic } from '../../components/LightBulbTopic';
 import { listOfEvents } from "./components/listOfEvents";
-import getDiplomaImage from "../../images/eventImages/getDiploma.png";
 
 export const ComingEvents = () => {
   return (
- <section className=' p-6 sm:p-20 flex flex-col gap-10 '>
+ <section className=' p-6 sm:p-20 flex flex-col gap-10'>
       <article className='mx-auto max-w-7xl flex gap-10 lg:gap-20 items-center flex-col-reverse lg:flex-row'>
         <div className=' mx-auto flex flex-col items-center    justify-center gap-5'>
            <LightBulbTopic topic='Календарь МБС' />
