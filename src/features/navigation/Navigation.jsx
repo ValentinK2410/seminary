@@ -22,7 +22,7 @@ export const Navigation = () => {
   };
 
   return (
-    <section className='fixed w-full  px-6 md:px-20  bg-blue-800 flex shadow flex z-10'>
+    <section className='fixed w-full  px-6 md:px-20  bg-blue-800 flex shadow z-10'>
       <article className='max-w-7xl w-full mx-auto'>
         <div className='w-full flex items-center justify-between'>
           <main className='w-full mx-auto flex gap-4 justify-between items-center'>
@@ -37,7 +37,7 @@ export const Navigation = () => {
             </article>
 
             <article className='desktop_menu_items flex-shrink-0'>
-              <MainNav />
+              <MainNav onLinkClick={() => setMenuOpen(false)} />
             </article>
 
             <article className='flex gap-2'>

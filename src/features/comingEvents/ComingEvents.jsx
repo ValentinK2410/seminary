@@ -51,7 +51,7 @@ export const ComingEvents = () => {
           ))}
         </div>
 
-        <div className="mt-10 w-full ux:w-fit px-4 pt-10 sm:px-16 sm:pb-0 flex flex-col sm:flex-row  max-w-7xl mx-auto  bg-indigo-500 rounded-xl gap-10 items-center justify-center">
+        {/* <div className="mt-10 w-full ux:w-fit px-4 pt-10 sm:px-16 sm:pb-0 flex flex-col sm:flex-row  max-w-7xl mx-auto  bg-indigo-500 rounded-xl gap-10 items-center justify-center">
           <img src={getDiplomaImage} alt="a young woman" className='self-center' />
           <div className='flex flex-col lg:flex-row gap-5'>
               <p className="text-2xl  xl:text-5xl text-center sm:text-left leading-snug text-indigo-50 max-w-[18ch]">
@@ -61,7 +61,8 @@ export const ComingEvents = () => {
                 <span className='hidden sm:inline-block lg:hidden xl:inline-block mr-1'>Посмотреть </span>  все курсы <span className="ml-2 mt-1 transition-colors duration-200">→</span>
               </SecondaryButton>
           </div>
-        </div>
+        </div> */}
+
       </article>
     </section>
   )

@@ -1,19 +1,23 @@
 import { LightBulbTopic } from "../../components/LightBulbTopic";
 import { educationalDegrees } from "./components/educationalDegrees";
+import { PrimaryButton } from '../../componentLibrary/PrimaryButton';
 
 export const Educations = () => {
 
   return (
-    <section id="программы" className="bg-indigo-25  p-6 sm:p-20 flex  items-center">
+    <section id="programs" className="scroll-mt-14 bg-indigo-25  p-6 sm:p-20 flex  items-center">
       <div className="w-full max-w-7xl mx-auto flex  flex-col gap-10 ">
-        <main className="flex text-center flex-col justify-center items-center space-y-5">
+        <main className="flex text-center flex-col justify-center items-center">
           <LightBulbTopic topic='Учебные программы' />
-          <h3 className="mx-auto text-2xl sm:text-4xl text-indigo-900 text-left max-w-[40ch]">
+          <h3 className="my-4 mx-auto text-2xl sm:text-4xl text-indigo-900 text-left max-w-[40ch]">
             Выберите для себя программу обучения!
           </h3>
           <p className="w-full max-w-[90ch] text-left">
             Посмотрите программы, предлагаемые в Московской богословской семинарии МБС. Они помогут вам более эффективно нести ваше служение в соответствии с вашим призванием, перестроиться или начать все с чистого листа. Наставники МБС будут с вами на каждом шагу!
           </p>
+          <PrimaryButton className='my-10 w-fit self-center'>
+             <span className='hidden ux:inline-block mr-1'> Просмотреть </span> Все Программы <span className="ml-2 mt-1 transition-colors duration-200">→</span>
+          </PrimaryButton>
         </main>
         
         <div className="flex flex-wrap gap-10 justify-center">
