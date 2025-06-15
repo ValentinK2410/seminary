@@ -88,7 +88,7 @@ const cardCourse = [
 
 export const Courses = () => {
   return (
-    <section className="p-6 sm:p-20 flex flex-col gap-10">
+    <section id="courses" className="scroll-mt-14 p-6 sm:p-20 flex flex-col gap-10">
       <main className=" max-w-7xl mx-auto flex flex-col gap-5 items-center justify-center">
         <LightBulbTopic topic="Курсы на базе МБС" />
         <h3 className="text-center text-2xl sm:text-4xl text-indigo-900 max-w-[29ch]">
