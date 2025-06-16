@@ -4,6 +4,12 @@ import mainPerson from '../../images/mainPerson.png'
 
 export const Banner = () => {
   return (
+
+    // на логотипы: https://baptist.org.ru/
+
+    // https://tea-e.org/
+
+
     <section className='relative px-6 ux:px-6 sm:px-20 sm:pt-0 pb-10 sm:pb-0 bg-indigo-25 flex flex-col'>
       
       <div className='EMPTY-DIV h-[70px] bg-indigo-25'></div>
