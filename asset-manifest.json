@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/seminary/static/css/main.4674468c.css",
+    "main.js": "/seminary/static/js/main.83322a90.js",
+    "static/media/mainPerson.png": "/seminary/static/media/mainPerson.a926b8d1d1c2f8feaa17.png",
+    "static/media/lessonsforkids.png": "/seminary/static/media/lessonsforkids.138e3ffe6f0b58beecd1.png",
+    "static/media/islam.jpg": "/seminary/static/media/islam.fee34ca78edb0d0dd2aa.jpg",
+    "static/media/istoriya-novogo-zaveta.jpg": "/seminary/static/media/istoriya-novogo-zaveta.6cd137a1dd45b6bb0a99.jpg",
+    "static/media/03.png": "/seminary/static/media/03.dd9af230f33101196dae.png",
+    "static/media/01.png": "/seminary/static/media/01.dedf21e5796af2dff2ff.png",
+    "static/media/02.png": "/seminary/static/media/02.cda8d46420c42b53a92e.png",
+    "static/media/gomiletika.jpg": "/seminary/static/media/gomiletika.911d223fc0725ec8d55f.jpg",
+    "static/media/04.png": "/seminary/static/media/04.39d3f45ad8d4a642f92f.png",
+    "static/media/pogoda-v-dome.jpg": "/seminary/static/media/pogoda-v-dome.a77d3a45247ccad41a35.jpg",
+    "static/media/01.jpg": "/seminary/static/media/01.c1950fbfb64481074d50.jpg",
+    "static/media/03.jpg": "/seminary/static/media/03.64bc1607fb26fed926a7.jpg",
+    "static/media/02.jpg": "/seminary/static/media/02.bf8a5b23abf7861a4a6d.jpg",
+    "static/media/aboutUsPhoto.jpeg": "/seminary/static/media/aboutUsPhoto.bcaaee83cdc86bd96c88.jpeg",
+    "static/media/realchurches.png": "/seminary/static/media/realchurches.62afbcba4e7dd9250a84.png",
+    "static/media/bibliologiya.jpg": "/seminary/static/media/bibliologiya.f2fb817f628190b7477b.jpg",
+    "static/media/Hristologiay.png": "/seminary/static/media/Hristologiay.dc54b521082afebe3de6.png",
+    "static/media/apologetics.jpeg": "/seminary/static/media/apologetics.56a6f4c5f40d8be3f320.jpeg",
+    "static/media/history.jpeg": "/seminary/static/media/history.faa85dfa2a637d65da1c.jpeg",
+    "static/media/soulsupport.jpeg": "/seminary/static/media/soulsupport.23e90b60527fa6d8d75c.jpeg",
+    "static/media/churchleadership.jpeg": "/seminary/static/media/churchleadership.0dfb50ddb26c4ae3f588.jpeg",
+    "static/media/cornerstone.jpeg": "/seminary/static/media/cornerstone.8b5f2c8b2a2ba1efcf01.jpeg",
+    "static/media/preaching.jpeg": "/seminary/static/media/preaching.84a08654c271293a115f.jpeg",
+    "static/media/goodnews.jpeg": "/seminary/static/media/goodnews.710eaaf622bfa2f7f3dd.jpeg",
+    "static/media/mission.jpeg": "/seminary/static/media/mission.217fb7d13416907ce41c.jpeg",
+    "static/media/bogoslovie.jpeg": "/seminary/static/media/bogoslovie.4783cac2efbeb5dfcf7b.jpeg",
+    "static/media/studyBible.jpg": "/seminary/static/media/studyBible.134775f6686c6aeb3679.jpg",
+    "static/media/revicons.eot": "/seminary/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/seminary/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/seminary/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/seminary/index.html",
+    "main.4674468c.css.map": "/seminary/static/css/main.4674468c.css.map",
+    "main.83322a90.js.map": "/seminary/static/js/main.83322a90.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4674468c.css",
+    "static/js/main.83322a90.js"
+  ]
+}
