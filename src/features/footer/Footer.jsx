@@ -4,6 +4,11 @@ import { Icon_facebook } from '../../images/Icon_facebook';
 import { Icon_instagram } from '../../images/Icon_instagram';
 import { Icon_youtube } from '../../images/Icon_youtube';
 import { Icon_x } from '../../images/Icon_x';
+import { Icon_vk } from '../../images/Icon_vk';
+import { Icon_rutube } from '../../images/Icon_rutube';
+import { Icon_telegram } from '../../images/Icon_telegram';
+
+
 import { Input } from '../../componentLibrary/Input';
 
 import { MapPin, Phone, Mail } from 'lucide-react';
@@ -94,9 +99,9 @@ export const Footer = () => {
           <h3 className='text-lg text-zinc-600 font-semibold mb-4'>Социальные сети</h3>
           <ul className="space-y-2">
             {[
-              { label: 'МБС в VK', href: 'https://facebook.com' },
-              { label: 'МБС в RuTube', href: 'https://x.com' },
-              { label: 'МБС в Telegram', href: 'https://instagram.com' },
+              { label: 'МБС в VK', href: 'https://vk.com/mbsehb' },
+              { label: 'МБС в RuTube', href: 'https://rutube.ru/channel/46391748/' },
+              { label: 'МБС в Telegram', href: 'https://t.me/mbsehb' },
             ].map(({ label, href }) => (
               <li key={label}>
                 <a
@@ -137,23 +142,18 @@ export const Footer = () => {
         <div className="social-copyright">
           <ul className="flex space-x-4 ml-auto">
             <li>
-              <a href="#" aria-label="Facebook">
-                <Icon_facebook className="w-6 h-6" />
+              <a href="https://vk.com/mbsehb" aria-label="VK">
+                <Icon_vk className="w-7 h-7 mt-[-2px]" />
               </a>
             </li>
             <li>
-              <a href="#" aria-label="Instagram">
-                <Icon_instagram className="w-6 h-6" />
+              <a href="https://rutube.ru/channel/46391748/" aria-label="Rutube">
+                <Icon_rutube className="w-6 h-6" />
               </a>
             </li>
             <li>
-              <a href="#" aria-label="YouTube">
-              <Icon_youtube className="w-6 h-6" />
-              </a>
-            </li>
-             <li>
-              <a href="#" aria-label="X">
-              <Icon_x className="w-6 h-6" />
+              <a href="https://t.me/mbsehb" aria-label="Telegram">
+                <Icon_telegram className="w-6 h-6" />
               </a>
             </li>
           </ul>
