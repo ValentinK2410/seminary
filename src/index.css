@@ -32,6 +32,9 @@ body {
 
 img {
   max-width: 100%;
+  font-style: italic;
   height: auto;
-  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align: center;
 }
