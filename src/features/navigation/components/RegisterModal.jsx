@@ -14,6 +14,8 @@ export const RegisterModal = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
 
   const handleChange = (e) => {
+    // Добавляем отладку
+    console.log("Change event:", e.target.name, e.target.value);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleRegister = async (e) => {
@@ -93,7 +95,7 @@ export const RegisterModal = ({ isOpen, onClose }) => {
                 type="text"
                 id="name"
                 name="name"
-                onChange={handleChange}
+                onChange={alert(`Change event: `)}
                 value={formData.name}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 placeholder="Введите ваш имя"

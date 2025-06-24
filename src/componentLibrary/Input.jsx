@@ -1,7 +1,10 @@
-export const Input = ({ id, type = 'text', placeholder = 'Введите текст', className = '', required = false }) => {
+export const Input = ({ id,name,value,onChange, type = 'text', placeholder = 'Введите текст', className = '', required = false }) => {
   return (
     <input 
       id={id}
+      name={name}
+      value={value}
+      onChange={onChange}
       type={type}
       placeholder={placeholder}
       required={required}
