@@ -13,9 +13,7 @@ import "./Navigation.css";
 export const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [profile, setProfile] = useState(
-    localStorage.getItem("userName") ? "Выход" : "Вход"
-  );
+
   const [isLogin, setIsLogin] = useState(
     localStorage.getItem("userName") ? true : false
   );
@@ -30,6 +28,7 @@ export const Navigation = () => {
   setInterval(() => {
     setIsLogin(localStorage.getItem("userName") ? true : false);
   }, 5000);
+
   return (
     <section className="fixed w-full  px-6 md:px-20  bg-blue-800 flex shadow z-50">
       <article className="max-w-7xl w-full mx-auto">
@@ -58,7 +57,7 @@ export const Navigation = () => {
                   onClick={openAuthModal}
                   className="!py-1 px-3 h-full bg-slate-200 border-indigo-200"
                 >
-                  {profile}
+                  Вход
                 </SecondaryButton>
               )}
               {isLogin && <DropdownMenu />}
