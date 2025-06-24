@@ -13,7 +13,8 @@
     "react-multi-carousel": "^2.8.6",
     "react-query": "^3.39.3",
     "react-router-dom": "^7.6.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "axios": "^1.10.0"
   },
   "homepage": "https://valentink2410.github.io/seminary/",
   "scripts": {

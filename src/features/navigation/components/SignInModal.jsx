@@ -1,8 +1,19 @@
-import { X } from 'lucide-react';
-import { Input } from '../../../componentLibrary/Input';
+import { useState } from "react";
+import { X } from "lucide-react";
+import { Input } from "../../../componentLibrary/Input";
+import { RegisterModal } from "./RegisterModal";
 
 
 export const SignInModal = ({ isOpen, onClose }) => {
+  const [registerModalOpen, setRegisterModalOpen] = useState(false);
+
+  const openRegisterModal = () => {
+    setRegisterModalOpen(true);
+  };
+
+  const closeRegisterModal = () => {
+    setRegisterModalOpen(false);
+  };
   // Prevent rendering if modal is not open
   if (!isOpen) return null;
 
@@ -12,7 +23,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
         {/* Close Button */}
         <button
           onClick={onClose}
-          aria-label="Закрыть модальное окно"  
+          aria-label="Закрыть модальное окно"
           className="absolute top-4 right-4 p-2"
         >
           <X className="w-6 h-6 text-gray-600 hover:text-gray-800" />
@@ -20,33 +31,39 @@ export const SignInModal = ({ isOpen, onClose }) => {
 
         {/* Modal Content */}
         <div className="flex flex-col gap-6">
-          <h2 className="text-2xl font-semibold text-gray-800">Вход</h2>  
+          <h2 className="text-2xl font-semibold text-gray-800">Вход</h2>
 
           <form className="flex flex-col gap-4">
             {/* Email Input */}
             <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                Электронная почта  
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-gray-700"
+              >
+                Электронная почта
               </label>
               <Input
                 type="email"
                 id="email"
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
-                placeholder="Введите ваш email"  
+                placeholder="Введите ваш email"
                 required
               />
             </div>
 
             {/* Password Input */}
             <div className="flex flex-col gap-2">
-              <label htmlFor="password" className="text-sm font-medium text-gray-700">
-                Пароль  
+              <label
+                htmlFor="password"
+                className="text-sm font-medium text-gray-700"
+              >
+                Пароль
               </label>
               <Input
                 type="password"
                 id="password"
                 className=""
-                placeholder="Введите ваш пароль"  
+                placeholder="Введите ваш пароль"
                 required
               />
             </div>
@@ -59,7 +76,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
                 className="h-4 w-4 border-0 focus:ring-0"
               />
               <label htmlFor="trust-device" className="text-sm text-gray-700">
-                Я доверяю этому устройству  
+                Я доверяю этому устройству
               </label>
             </div>
 
@@ -68,21 +85,20 @@ export const SignInModal = ({ isOpen, onClose }) => {
               type="submit"
               className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"
             >
-              Войти  
+              Войти
             </button>
           </form>
 
           {/* Sign Up Suggestion */}
           <p className="text-sm text-gray-600 text-center">
-            Нет аккаунта?{' '}  
+            Нет аккаунта?{" "}
             <button
-              onClick={() => {
-                onClose();
-              }}
+              onClick={openRegisterModal}
               className="text-indigo-600 hover:underline"
             >
-              Зарегистрироваться  
+              Зарегистрироваться
             </button>
+            <RegisterModal isOpen={registerModalOpen} onClose={closeRegisterModal} />
           </p>
         </div>
       </div>
