@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/seminary/static/css/main.7f8708cb.css",
-    "main.js": "/seminary/static/js/main.ac4c3c95.js",
+    "main.js": "/seminary/static/js/main.83cebc9e.js",
     "static/media/mainPerson.png": "/seminary/static/media/mainPerson.a926b8d1d1c2f8feaa17.png",
     "static/media/lessonsforkids.png": "/seminary/static/media/lessonsforkids.138e3ffe6f0b58beecd1.png",
     "static/media/islam.jpg": "/seminary/static/media/islam.fee34ca78edb0d0dd2aa.jpg",
@@ -34,10 +34,10 @@
     "static/media/revicons.woff": "/seminary/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/seminary/index.html",
     "main.7f8708cb.css.map": "/seminary/static/css/main.7f8708cb.css.map",
-    "main.ac4c3c95.js.map": "/seminary/static/js/main.ac4c3c95.js.map"
+    "main.83cebc9e.js.map": "/seminary/static/js/main.83cebc9e.js.map"
   },
   "entrypoints": [
     "static/css/main.7f8708cb.css",
-    "static/js/main.ac4c3c95.js"
+    "static/js/main.83cebc9e.js"
   ]
 }
