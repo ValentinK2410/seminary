@@ -5,6 +5,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@heroicons/react": "^2.2.0",
+    "axios": "^1.10.0",
     "framer-motion": "^12.10.4",
     "lucide-react": "^0.513.0",
     "react": "^18.3.1",
@@ -13,8 +14,7 @@
     "react-multi-carousel": "^2.8.6",
     "react-query": "^3.39.3",
     "react-router-dom": "^7.6.0",
-    "react-scripts": "5.0.1",
-    "axios": "^1.10.0"
+    "react-scripts": "5.0.1"
   },
   "homepage": "https://valentink2410.github.io/seminary/",
   "scripts": {
