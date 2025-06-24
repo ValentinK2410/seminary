@@ -65,6 +65,7 @@ export const RegisterModal = ({ isOpen, onClose }) => {
                 id="name"
                 name="name"
                 onChange={handleChange}
+                value={formData.name}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 placeholder="Введите ваш имя"
                 required
@@ -83,6 +84,7 @@ export const RegisterModal = ({ isOpen, onClose }) => {
                 id="email"
                 name="email"
                 onChange={handleChange}
+                value={formData.email}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 placeholder="Введите ваш email"
                 required
@@ -102,6 +104,7 @@ export const RegisterModal = ({ isOpen, onClose }) => {
                 id="password"
                 name="password"
                 onChange={handleChange}
+                value={formData.password}
                 className=""
                 placeholder="Введите ваш пароль"
                 required
@@ -120,6 +123,7 @@ export const RegisterModal = ({ isOpen, onClose }) => {
                 id="password_confirmation"
                 name="password_confirmation"
                 onChange={handleChange}
+                value={formData.password_confirmation}
                 className=""
                 placeholder="Подтвердите пароль"
                 required
