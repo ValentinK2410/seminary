@@ -1,17 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { X } from "lucide-react";
 import { Input } from "../../../componentLibrary/Input";
-export const RegisterModal = ({ isOpen, onClose }) => {
+import "./RegisterModal.css";
+export const RegisterModal = ({ isOpen, onClose, children }) => {
   const [formData, setFormData] = useState({
-    name: "test",
-    email: "sdf@sdf.com",
-    password: "123456",
-    password_confirmation: "123456",
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
   });
+  const modalRef = useRef(null);
   const [message, setMessage] = useState("");
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
+  const [isVisible, setIsVisible] = useState(false);
+  // Обработка анимаций открытия/закрытия
+  useEffect(() => {
+    if (isOpen) {
+      // Задержка для активации анимации
+      requestAnimationFrame(() => setIsVisible(true));
+    } else {
+      setIsVisible(false);
+    }
+  }, [isOpen]);
+
+   // Закрытие по клику вне модалки
+   useEffect(() => {
+     const handleClickOutside = (e) => {
+       if (modalRef.current && !modalRef.current.contains(e.target)) {
+         onClose();
+       }
+     };
+
+     if (isOpen) document.addEventListener("mousedown", handleClickOutside);
+     return () => document.removeEventListener("mousedown", handleClickOutside);
+   }, [isOpen, onClose]);
+
+   if (!isOpen && !isVisible) return null;
+
 
   const handleChange = (e) => {
     // Добавляем отладку
@@ -59,19 +86,42 @@ export const RegisterModal = ({ isOpen, onClose }) => {
     } finally {
       setIsLoading(false);
     }
-    //console.log(response.data);
+   
   };
-  // Prevent rendering if modal is not open
-  if (!isOpen) return null;
+ 
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-      <div className="bg-white relative rounded-lg p-6 w-full max-w-sm mx-4">
+    <div
+      className={`fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center transition-opacity ${
+        isVisible ? "bg-black/50" : "bg-transparent"
+      }`}
+      style={{
+        transition: "background-color 300ms ease-out",
+        pointerEvents: isVisible ? "auto" : "none",
+      }}
+    >
+      {/* Overlay с анимацией */}
+      <div
+        className={`absolute inset-0 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+        style={{ transition: "opacity 300ms" }}
+        onClick={onClose}
+      />
+      <div
+        ref={modalRef}
+        className={`relative bg-white rounded-xl shadow-xl max-w-md w-full p-6 transform ${
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+        }`}
+        style={{
+          transition: "all 300ms cubic-bezier(0.4, 0, 0.2, 1)",
+        }}
+      >
+        {children}
         {/* Close Button */}
         <button
           onClick={onClose}
-          aria-label="Закрыть модальное окно"
-          className="absolute top-4 right-4 p-2"
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
         >
           <X className="w-6 h-6 text-gray-600 hover:text-gray-800" />
         </button>
@@ -95,7 +145,7 @@ export const RegisterModal = ({ isOpen, onClose }) => {
                 type="text"
                 id="name"
                 name="name"
-                onChange={alert(`Change event: `)}
+                onChange={handleChange}
                 value={formData.name}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 placeholder="Введите ваш имя"

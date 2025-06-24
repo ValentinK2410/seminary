@@ -1,0 +1,16 @@
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+  }
+  
+  @keyframes slideOut {
+    to { transform: translateY(20px); }
+  }
+  
+  .animate-fade-out {
+    animation: fadeOut 0.4s forwards;
+  }
+  
+  .animate-slide-out {
+    animation: slideOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
