@@ -10,6 +10,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
     email: "",
     password: "",
   });
+  const [loginSuccess, setLoginSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
   const [message, setMessage] = useState("");
 
@@ -35,11 +36,16 @@ export const SignInModal = ({ isOpen, onClose }) => {
         "https://api.russianseminary.org/api/login",
         { email: formData.email, password: formData.password }
       );
+      console.log(response);
       // Сохраняем токен в localStorage
       localStorage.setItem("authToken", response.data.token);
+      // Сохраняем имя пользователя в localStorage
+      localStorage.setItem("userName", response.data.user.name);
+      // закрыть модальное окно через 2 секунды
       setTimeout(() => {
         setMessage("");
         onClose();
+        setIsLoading(false);
       }, 2000);
     } catch (error) {
       if (error.response) {
@@ -120,7 +126,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
             {message && (
               <p
                 className={`text-sm p-2 rounded-md ${
-                  registrationSuccess
+                  loginSuccess
                     ? "bg-green-100 text-green-700"
                     : "bg-red-100 text-red-500"
                 }`}
@@ -128,7 +134,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
                 {message}
               </p>
             )}
-            {/* Submit Button */}
+
             {/* Submit Button */}
             <button
               type="submit"
