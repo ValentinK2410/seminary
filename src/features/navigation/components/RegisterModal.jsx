@@ -3,6 +3,7 @@ import axios from "axios";
 import { X } from "lucide-react";
 import { Input } from "../../../componentLibrary/Input";
 import "./RegisterModal.css";
+
 export const RegisterModal = ({
   isOpen,
   onClose,
@@ -21,6 +22,7 @@ export const RegisterModal = ({
   const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
   const [isVisible, setIsVisible] = useState(false);
   const [closing, setClosing] = useState(false);
+
   // Обработка закрытия с анимацией
   const handleClose = () => {
     setClosing(true);
@@ -87,26 +89,37 @@ export const RegisterModal = ({
         handleClose();
         if (onCloseComplete) onCloseComplete();
       }, 2000); // Должно совпадать с длительностью анимации
-    } catch (error) {
-      let errorMessage = "Произошла ошибка";
 
-      if (error.response) {
-        // Сервер ответил с ошибкой 4xx/5xx
-        errorMessage =
-          error.response?.data?.message ||
-          error.response?.data?.error ||
-          JSON.stringify(error.response.data);
-      } else if (error.request) {
-        // Запрос был сделан, но ответ не получен
-        errorMessage = "Сервер не ответил. Проверьте подключение к интернету";
-      } else {
-        // Ошибка настройки запроса
-        errorMessage = error.message;
-      }
+      } catch (error) {
+  let errorMessage = "Произошла ошибка";
 
-      setMessage(`Ошибка: ${errorMessage}`);
-      setRegistrationSuccess(false);
-    } finally {
+  if (error.response) {
+    const data = error.response.data?.error || error.response.data?.errors || error.response.data;
+
+    if (typeof data === "object" && data !== null) {
+      errorMessage = Object.entries(data)
+        .map(([key, value]) => {
+          if (Array.isArray(value)) {
+            return `${key}: ${value.join(", ")}`;
+          } else if (typeof value === "string") {
+            return `${key}: ${value}`;
+          } else {
+            return `${key}: ${JSON.stringify(value)}`;
+          }
+        })
+        .join(" | ");
+    } else {
+      errorMessage = data?.message || data?.error || JSON.stringify(data);
+    }
+  } else if (error.request) {
+    errorMessage = "Сервер не ответил. Проверьте подключение к интернету";
+  } else {
+    errorMessage = error.message;
+  }
+
+  setMessage(errorMessage);
+  setRegistrationSuccess(false);
+} finally {
       setIsLoading(false);
     }
   };
@@ -233,7 +246,7 @@ export const RegisterModal = ({
             </div>
 
             {message && (
-              <p
+              <div
                 className={`text-sm p-2 rounded-md ${
                   registrationSuccess
                     ? "bg-green-100 text-green-700"
@@ -241,7 +254,7 @@ export const RegisterModal = ({
                 }`}
               >
                 {message}
-              </p>
+              </div>
             )}
 
             {/* Submit Button */}

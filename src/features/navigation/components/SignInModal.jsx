@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { X } from "lucide-react";
 import { Input } from "../../../componentLibrary/Input";
@@ -11,7 +11,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
     password: "",
   });
   const [loginSuccess, setLoginSuccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
+  const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
 
   const openRegisterModal = () => {
@@ -21,9 +21,11 @@ export const SignInModal = ({ isOpen, onClose }) => {
   const closeRegisterModal = () => {
     setRegisterModalOpen(false);
   };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   // Prevent rendering if modal is not open
   if (!isOpen) return null;
 
@@ -34,27 +36,53 @@ export const SignInModal = ({ isOpen, onClose }) => {
     try {
       const response = await axios.post(
         "https://api.russianseminary.org/api/login",
-        { email: formData.email, password: formData.password }
+        {
+          email: formData.email,
+          password: formData.password,
+        }
       );
-      console.log(response);
-      // Сохраняем токен в localStorage
+
+      // Save token and user name
       localStorage.setItem("authToken", response.data.token);
-      // Сохраняем имя пользователя в localStorage
       localStorage.setItem("userName", response.data.user.name);
-      // закрыть модальное окно через 2 секунды
+
+      setMessage("Вход выполнен успешно!");
+      setLoginSuccess(true);
+
+      // Close modal after short delay
       setTimeout(() => {
         setMessage("");
         onClose();
-        setIsLoading(false);
       }, 2000);
     } catch (error) {
-      if (error.response) {
-        setMessage(error.response.data.message);
-      } else {
-        setMessage("An error occurred.");
+      let errorMessage = "Ошибка входа";
+
+      const data =
+        error.response?.data?.error ||
+        error.response?.data?.errors ||
+        error.response?.data ||
+        error.message;
+
+      if (typeof data === "object") {
+        errorMessage = Object.entries(data)
+          .map(([key, value]) =>
+            `${key}: ${Array.isArray(value) ? value.join(", ") : value}`
+          )
+          .join(" | ");
+      } else if (typeof data === "string") {
+        errorMessage = data;
       }
+
+      setMessage(`Ошибка: ${errorMessage}`);
+      setLoginSuccess(false);
+
+      console.log("errorMessage", errorMessage)
+      
+    } finally {
+      setIsLoading(false); // ✅ Ensures the loading spinner stops
     }
   };
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
       <div className="bg-white relative rounded-lg p-6 w-full max-w-sm mx-4">
@@ -74,10 +102,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
           <form onSubmit={handleLogin} className="flex flex-col gap-4">
             {/* Email Input */}
             <div className="flex flex-col gap-2">
-              <label
-                htmlFor="email"
-                className="text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="email" className="text-sm font-medium text-gray-700">
                 Электронная почта
               </label>
               <Input
@@ -94,10 +119,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
 
             {/* Password Input */}
             <div className="flex flex-col gap-2">
-              <label
-                htmlFor="password"
-                className="text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="password" className="text-sm font-medium text-gray-700">
                 Пароль
               </label>
               <Input
@@ -123,6 +145,8 @@ export const SignInModal = ({ isOpen, onClose }) => {
                 Я доверяю этому устройству
               </label>
             </div>
+
+            {/* Message Area */}
             {message && (
               <p
                 className={`text-sm p-2 rounded-md ${

@@ -52,6 +52,7 @@ export const Navigation = () => {
               <div className="parent_container w-full">
                 <Search />
               </div>
+
               {!isLogin && (
                 <SecondaryButton
                   onClick={openAuthModal}
@@ -60,6 +61,7 @@ export const Navigation = () => {
                   Вход
                 </SecondaryButton>
               )}
+              
               {isLogin && <DropdownMenu />}
               {/* Hamburger Button */}
               <div className="hamburger-btn w-fit border border-indigo-300 hover:bg-white rounded-md transition-colors duration-200 group">
