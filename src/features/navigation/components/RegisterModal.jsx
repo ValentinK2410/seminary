@@ -3,7 +3,12 @@ import axios from "axios";
 import { X } from "lucide-react";
 import { Input } from "../../../componentLibrary/Input";
 import "./RegisterModal.css";
-export const RegisterModal = ({ isOpen, onClose, children }) => {
+export const RegisterModal = ({
+  isOpen,
+  onClose,
+  onCloseComplete,
+  children,
+}) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,6 +20,19 @@ export const RegisterModal = ({ isOpen, onClose, children }) => {
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
   const [isVisible, setIsVisible] = useState(false);
+  const [closing, setClosing] = useState(false);
+  // Обработка закрытия с анимацией
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setMessage("");
+      setRegistrationSuccess(false);
+      onClose();
+      setClosing(false);
+      if (onCloseComplete) onCloseComplete();
+    }, 1500); // Должно совпадать с длительностью анимации
+  };
+
   // Обработка анимаций открытия/закрытия
   useEffect(() => {
     if (isOpen) {
@@ -25,24 +43,21 @@ export const RegisterModal = ({ isOpen, onClose, children }) => {
     }
   }, [isOpen]);
 
-   // Закрытие по клику вне модалки
-   useEffect(() => {
-     const handleClickOutside = (e) => {
-       if (modalRef.current && !modalRef.current.contains(e.target)) {
-         onClose();
-       }
-     };
+  // Закрытие по клику вне модалки
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        handleClose();
+      }
+    };
 
-     if (isOpen) document.addEventListener("mousedown", handleClickOutside);
-     return () => document.removeEventListener("mousedown", handleClickOutside);
-   }, [isOpen, onClose]);
+    if (isOpen) document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen, onClose]);
 
-   if (!isOpen && !isVisible) return null;
-
+  if (!isOpen && !isVisible) return null;
 
   const handleChange = (e) => {
-    // Добавляем отладку
-    console.log("Change event:", e.target.name, e.target.value);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleRegister = async (e) => {
@@ -64,6 +79,14 @@ export const RegisterModal = ({ isOpen, onClose, children }) => {
         password: "",
         password_confirmation: "",
       });
+      setTimeout(() => {
+        setMessage("");
+        setRegistrationSuccess(false);
+        onClose();
+        setClosing(false);
+        handleClose();
+        if (onCloseComplete) onCloseComplete();
+      }, 2000); // Должно совпадать с длительностью анимации
     } catch (error) {
       let errorMessage = "Произошла ошибка";
 
@@ -86,9 +109,7 @@ export const RegisterModal = ({ isOpen, onClose, children }) => {
     } finally {
       setIsLoading(false);
     }
-   
   };
- 
 
   return (
     <div
