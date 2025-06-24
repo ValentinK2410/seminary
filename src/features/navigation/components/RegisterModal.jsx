@@ -4,29 +4,58 @@ import { X } from "lucide-react";
 import { Input } from "../../../componentLibrary/Input";
 export const RegisterModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    password_confirmation: "",
+    name: "test",
+    email: "sdf@sdf.com",
+    password: "123456",
+    password_confirmation: "123456",
   });
   const [message, setMessage] = useState("");
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleRegister = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setMessage("");
     try {
       const response = await axios.post(
         "https://api.russianseminary.org/api/register/",
         formData
       );
       console.log(response.data.message);
-      setMessage(response.data.message);
+      setMessage(response.data.message || "Регистрация прошла успешно!");
       setRegistrationSuccess(true);
+      // Очистка формы после успешной регистрации
+      setFormData({
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+      });
     } catch (error) {
-      setMessage(`Ошибка: ${error.response?.data?.message || error.message}`);
+      let errorMessage = "Произошла ошибка";
+
+      if (error.response) {
+        // Сервер ответил с ошибкой 4xx/5xx
+        errorMessage =
+          error.response?.data?.message ||
+          error.response?.data?.error ||
+          JSON.stringify(error.response.data);
+      } else if (error.request) {
+        // Запрос был сделан, но ответ не получен
+        errorMessage = "Сервер не ответил. Проверьте подключение к интернету";
+      } else {
+        // Ошибка настройки запроса
+        errorMessage = error.message;
+      }
+
+      setMessage(`Ошибка: ${errorMessage}`);
+      setRegistrationSuccess(false);
+    } finally {
+      setIsLoading(false);
     }
     //console.log(response.data);
   };
@@ -51,8 +80,8 @@ export const RegisterModal = ({ isOpen, onClose }) => {
             Регистрация
           </h2>
 
-          <form className="flex flex-col gap-4">
-            {/* Email Input */}
+          <form onSubmit={handleRegister} className="flex flex-col gap-4">
+            {/* Поле имени */}
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="email"
@@ -71,7 +100,7 @@ export const RegisterModal = ({ isOpen, onClose }) => {
                 required
               />
             </div>
-            {/* Email Input */}
+            {/* Поле email */}
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="email"
@@ -91,7 +120,7 @@ export const RegisterModal = ({ isOpen, onClose }) => {
               />
             </div>
 
-            {/* Password Input */}
+            {/* Поле пароля */}
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="password"
@@ -132,9 +161,11 @@ export const RegisterModal = ({ isOpen, onClose }) => {
 
             {message && (
               <p
-                className={
-                  registrationSuccess ? "text-green-700" : "text-red-500"
-                }
+                className={`text-sm p-2 rounded-md ${
+                  registrationSuccess
+                    ? "bg-green-100 text-green-700"
+                    : "bg-red-100 text-red-500"
+                }`}
               >
                 {message}
               </p>
@@ -143,10 +174,38 @@ export const RegisterModal = ({ isOpen, onClose }) => {
             {/* Submit Button */}
             <button
               type="submit"
-              onClick={handleRegister}
-              className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"
+              disabled={isLoading}
+              className={`flex items-center justify-center bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition ${
+                isLoading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
-              Зарегистрироваться
+              {isLoading ? (
+                <>
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                  Обработка...
+                </>
+              ) : (
+                "Зарегистрироваться"
+              )}
             </button>
           </form>
         </div>
