@@ -7,9 +7,8 @@ import { CategoryMenuBtn } from "./components/CategoryMenuBtn";
 import Search from "../../components/Search";
 import { SignInModal } from "./components/SignInModal";
 import { SecondaryButton } from "../../componentLibrary/SecondaryButton";
-import {DropdownMenu} from "./components/DropdownMenu";
+import { DropdownMenu } from "./components/DropdownMenu";
 import "./Navigation.css";
-
 
 export const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,6 +27,9 @@ export const Navigation = () => {
     setAuthModalOpen(false);
   };
 
+  setInterval(() => {
+    setIsLogin(localStorage.getItem("userName") ? true : false);
+  }, 5000);
   return (
     <section className="fixed w-full  px-6 md:px-20  bg-blue-800 flex shadow z-50">
       <article className="max-w-7xl w-full mx-auto">

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import axios from "axios";
 export const DropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -27,8 +28,19 @@ export const DropdownMenu = () => {
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
+  // Обработчики для пунктов меню
+  const handleProfileClick = () => {
+    console.log("Переход в профиль");
+    setIsOpen(false); // Закрываем меню после выбора
+  };
 
-  const handleLogout = async (e) => {
+  const handleSettingsClick = () => {
+    console.log("Открытие настроек");
+    setIsOpen(false);
+  };
+
+
+  const handleLogoutClick = async (e) => {
     e.preventDefault();
 
     const token = localStorage.getItem("authToken");
@@ -45,6 +57,8 @@ export const DropdownMenu = () => {
       localStorage.removeItem("authToken");
       localStorage.removeItem("userName");
       console.log(response.data);
+      console.log("Выход из системы");
+      setIsOpen(false);
     } catch (error) {
       if (error.response) {
         setMessage(error.response.data.message);
@@ -94,36 +108,29 @@ export const DropdownMenu = () => {
         aria-labelledby="menu-button"
       >
         <div className="py-1" role="none">
-          <a
-            href="#"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-900 transition-colors duration-150"
+          <button
+            onClick={handleProfileClick}
+            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-900"
             role="menuitem"
           >
             Профиль
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-900 transition-colors duration-150"
+          </button>
+
+          <button
+            onClick={handleSettingsClick}
+            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-900"
             role="menuitem"
           >
             Настройки
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-900 transition-colors duration-150"
-            role="menuitem"
-          >
-            Сообщения
-          </a>
+          </button>
           <div className="border-t border-gray-100 my-1"></div>
-          <a
-            href="#"
-            onClick={handleLogout}
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-900 transition-colors duration-150"
+          <button
+            onClick={handleLogoutClick}
+            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-900"
             role="menuitem"
           >
             Выйти
-          </a>
+          </button>
         </div>
       </div>
     </div>
