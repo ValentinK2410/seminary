@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import axios from "axios";
+
 export const DropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -28,6 +29,7 @@ export const DropdownMenu = () => {
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
+  
   // Обработчики для пунктов меню
   const handleProfileClick = () => {
     console.log("Переход в профиль");
