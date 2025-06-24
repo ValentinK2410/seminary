@@ -1,11 +1,17 @@
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
 import { X } from "lucide-react";
 import { Input } from "../../../componentLibrary/Input";
 import { RegisterModal } from "./RegisterModal";
 
-
 export const SignInModal = ({ isOpen, onClose }) => {
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
+  const [message, setMessage] = useState("");
 
   const openRegisterModal = () => {
     setRegisterModalOpen(true);
@@ -14,9 +20,35 @@ export const SignInModal = ({ isOpen, onClose }) => {
   const closeRegisterModal = () => {
     setRegisterModalOpen(false);
   };
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
   // Prevent rendering if modal is not open
   if (!isOpen) return null;
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setMessage("");
+    try {
+      const response = await axios.post(
+        "https://api.russianseminary.org/api/login",
+        { email: formData.email, password: formData.password }
+      );
+      // Сохраняем токен в localStorage
+      localStorage.setItem("authToken", response.data.token);
+      setTimeout(() => {
+        setMessage("");
+        onClose();
+      }, 2000);
+    } catch (error) {
+      if (error.response) {
+        setMessage(error.response.data.message);
+      } else {
+        setMessage("An error occurred.");
+      }
+    }
+  };
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
       <div className="bg-white relative rounded-lg p-6 w-full max-w-sm mx-4">
@@ -33,7 +65,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
         <div className="flex flex-col gap-6">
           <h2 className="text-2xl font-semibold text-gray-800">Вход</h2>
 
-          <form className="flex flex-col gap-4">
+          <form onSubmit={handleLogin} className="flex flex-col gap-4">
             {/* Email Input */}
             <div className="flex flex-col gap-2">
               <label
@@ -45,6 +77,9 @@ export const SignInModal = ({ isOpen, onClose }) => {
               <Input
                 type="email"
                 id="email"
+                name="email"
+                onChange={handleChange}
+                value={formData.email}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 placeholder="Введите ваш email"
                 required
@@ -62,6 +97,9 @@ export const SignInModal = ({ isOpen, onClose }) => {
               <Input
                 type="password"
                 id="password"
+                name="password"
+                onChange={handleChange}
+                value={formData.password}
                 className=""
                 placeholder="Введите ваш пароль"
                 required
@@ -79,13 +117,53 @@ export const SignInModal = ({ isOpen, onClose }) => {
                 Я доверяю этому устройству
               </label>
             </div>
-
+            {message && (
+              <p
+                className={`text-sm p-2 rounded-md ${
+                  registrationSuccess
+                    ? "bg-green-100 text-green-700"
+                    : "bg-red-100 text-red-500"
+                }`}
+              >
+                {message}
+              </p>
+            )}
+            {/* Submit Button */}
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"
+              disabled={isLoading}
+              className={`flex items-center justify-center bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition ${
+                isLoading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
-              Войти
+              {isLoading ? (
+                <>
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                  Обработка...
+                </>
+              ) : (
+                "Войти"
+              )}
             </button>
           </form>
 
@@ -98,7 +176,10 @@ export const SignInModal = ({ isOpen, onClose }) => {
             >
               Зарегистрироваться
             </button>
-            <RegisterModal isOpen={registerModalOpen} onClose={closeRegisterModal} />
+            <RegisterModal
+              isOpen={registerModalOpen}
+              onClose={closeRegisterModal}
+            />
           </p>
         </div>
       </div>
