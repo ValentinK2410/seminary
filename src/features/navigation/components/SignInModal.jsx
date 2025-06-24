@@ -5,11 +5,14 @@ import { Input } from "../../../componentLibrary/Input";
 import { RegisterModal } from "./RegisterModal";
 
 export const SignInModal = ({ isOpen, onClose }) => {
+  
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -79,7 +82,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
       console.log("errorMessage", errorMessage)
       
     } finally {
-      setIsLoading(false); // ✅ Ensures the loading spinner stops
+      setIsLoading(false); // Ensures the loading spinner stops
     }
   };
 

@@ -17,6 +17,7 @@ export const Navigation = () => {
   const [isLogin, setIsLogin] = useState(
     localStorage.getItem("userName") ? true : false
   );
+  
   const openAuthModal = () => {
     setAuthModalOpen(true);
   };
@@ -35,13 +36,17 @@ export const Navigation = () => {
         <div className="w-full flex items-center justify-between">
           <main className="w-full mx-auto flex gap-4 justify-between items-center">
             <article className="flex gap-1 items-center">
+
               <div className="py-2 w-fit text-indigo-50 flex items-center justify-between min-w-10">
                 <Logo />
               </div>
+
               <LogoText />
+
               <div className="category_menu_btn">
                 <CategoryMenuBtn />
               </div>
+              
             </article>
 
             <article className="desktop_menu_items flex-shrink-0">

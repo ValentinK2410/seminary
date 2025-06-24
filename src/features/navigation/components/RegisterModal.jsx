@@ -19,7 +19,7 @@ export const RegisterModal = ({
   const modalRef = useRef(null);
   const [message, setMessage] = useState("");
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
+  const [isLoading, setIsLoading] = useState(false); 
   const [isVisible, setIsVisible] = useState(false);
   const [closing, setClosing] = useState(false);
 
@@ -62,6 +62,7 @@ export const RegisterModal = ({
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  
   const handleRegister = async (e) => {
     e.preventDefault();
     setIsLoading(true);

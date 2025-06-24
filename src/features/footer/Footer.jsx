@@ -1,9 +1,5 @@
 import { Logo } from '../../images/Logo';
 import { SecondaryButton } from '../../componentLibrary/SecondaryButton';
-import { Icon_facebook } from '../../images/Icon_facebook';
-import { Icon_instagram } from '../../images/Icon_instagram';
-import { Icon_youtube } from '../../images/Icon_youtube';
-import { Icon_x } from '../../images/Icon_x';
 import { Icon_vk } from '../../images/Icon_vk';
 import { Icon_rutube } from '../../images/Icon_rutube';
 import { Icon_telegram } from '../../images/Icon_telegram';
@@ -36,21 +32,6 @@ export const Footer = () => {
             Московская Богословская семинария (МБС) — это учебное заведение, которое предлагает богословское образование и подготовку для служения в церкви.
           </p>
 
-          {/* <ul className='space-y-2'>
-            <li className='flex items-center gap-2 text-zinc-600'>
-              <Icon_map className="w-3 text-indigo-600" />
-              111524, Москва, ул.Перовская, д.4а
-            </li>
-            <li className='flex items-center gap-2 text-zinc-600'>
-              <Icon_phone className="w-3 text-indigo-600" />
-              <a href="tel:+74957303580" className="hover:text-indigo-600">+7 (495) 730-35-80</a>
-            </li>
-            <li className='flex items-center gap-2 text-zinc-600'>
-              <Icon_email className="w-3 text-indigo-600" />
-              <a href="mailto:info@seminary.moscow" className="hover:text-indigo-600">info@seminary.moscow</a>
-            </li>
-          </ul> */}
-
           <ul className='space-y-2'>
             <li className='flex items-start gap-2 text-zinc-600'>
               <MapPin className="w-4 h-4 mt-1 text-indigo-600" />
@@ -63,7 +44,7 @@ export const Footer = () => {
               </a>
             </li>
             <li className='flex items-center gap-2 text-zinc-600'>
-              <Mail className="w-4 h-4 text-indigo-600" />
+              <Mail className="mt-0.5 w-4 h-4 text-indigo-600" />
               <a href="mailto:info@seminary.moscow" className="hover:text-indigo-600">
                 info@seminary.moscow
               </a>
