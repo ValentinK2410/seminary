@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { CategoryMenuBtn } from './components/CategoryMenuBtn';
 import Search from '../../components/Search';
 import { SignInModal } from '../auth/components/SignInModal';
-import { DropdownMenu } from '../auth/components/DropdownMenu';
+import { UserMenu } from '../auth/components/UserMenu';
 
 import './Navigation.css';
 import { SecondaryButton } from '../../componentLibrary/SecondaryButton';
@@ -42,6 +42,8 @@ export const Navigation = () => {
               <MainNav onLinkClick={() => setMenuOpen(false)} />
             </article>
             <article className="flex gap-2">
+
+              <UserMenu />
 
               <div className="parent_container w-full">
                 <Search />
