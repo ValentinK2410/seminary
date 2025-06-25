@@ -49,7 +49,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
       localStorage.setItem("authToken", response.data.token);
       localStorage.setItem("userName", response.data.user.name);
 
-      setMessage("Вход выполнен успешно!");
+      setMessage(response?.data?.message || "Вы успешно вошли!");
       setLoginSuccess(true);
 
       // Close modal after short delay
@@ -59,7 +59,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
       }, 2000);
     } catch (error) {
       let errorMessage = "Ошибка входа";
-
+console.log("error", error)
       const data =
         error.response?.data?.error ||
         error.response?.data?.errors ||

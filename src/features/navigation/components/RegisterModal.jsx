@@ -93,12 +93,12 @@ export const RegisterModal = ({
 
       } catch (error) {
   let errorMessage = "Произошла ошибка";
-
+console.log(error)
   if (error.response) {
     const data = error.response.data?.error || error.response.data?.errors || error.response.data;
 
-    if (typeof data === "object" && data !== null) {
-      errorMessage = Object.entries(data)
+     if (typeof data === "object" && data !== null) {
+       errorMessage = Object.entries(data)
         .map(([key, value]) => {
           if (Array.isArray(value)) {
             return `${key}: ${value.join(", ")}`;
@@ -108,10 +108,10 @@ export const RegisterModal = ({
             return `${key}: ${JSON.stringify(value)}`;
           }
         })
-        .join(" | ");
+        .join(" | "); 
     } else {
       errorMessage = data?.message || data?.error || JSON.stringify(data);
-    }
+    }   
   } else if (error.request) {
     errorMessage = "Сервер не ответил. Проверьте подключение к интернету";
   } else {
