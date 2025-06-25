@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { CategoryMenuBtn } from './components/CategoryMenuBtn';
 import Search from '../../components/Search';
 import { SignInModal } from '../auth/components/SignInModal';
-import { UserMenu } from '../auth/components/UserMenu';
+import { UserMenu } from './components/UserMenu';
 
 import './Navigation.css';
 import { SecondaryButton } from '../../componentLibrary/SecondaryButton';

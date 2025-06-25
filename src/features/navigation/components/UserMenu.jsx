@@ -16,7 +16,7 @@ export const UserMenu = () => {
   }, []);
 
   return (
-    <div className="relative inline-block text-left" ref={menuRef}>
+    <div className="relative hidden sm:inline-block text-left" ref={menuRef}>
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
