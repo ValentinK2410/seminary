@@ -31,9 +31,28 @@ export const DropdownMenu = () => {
   }, []);
   
   // Обработчики для пунктов меню
-  const handleProfileClick = () => {
-    console.log("Переход в профиль");
-    setIsOpen(false); // Закрываем меню после выбора
+  const handleProfileClick = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("authToken");
+    try {
+      const response = await axios.get(
+        "https://api.russianseminary.org/api/profile/",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.data);
+      console.log("Переход в профиль");
+      setIsOpen(false); // Закрываем меню после выбора
+    } catch (error) {
+      if (error.response) {
+        setMessage(error.response.data.message);
+      } else {
+        setMessage("An error occurred.");
+      }
+    }
   };
 
   const handleSettingsClick = () => {
