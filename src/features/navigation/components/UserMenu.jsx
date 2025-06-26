@@ -24,12 +24,12 @@ export const UserMenu = () => {
 
       <Dropdown isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} buttonClassName="text-yellow-200"
       >
-        <button className="block w-full text-left px-4 py-2 ..." role="menuitem">Профиль</button>
-        <button className="block w-full text-left px-4 py-2 ..." role="menuitem">Настройки</button>
-        <div className="border-t border-gray-100 my-1"></div>
-        <button className="block w-full text-left px-4 py-2 ..." role="menuitem" onClick={handleLogout}>Выйти</button>
+        <button className="block w-full text-left px-4 py-2 hover:bg-gray-200" role="menuitem">Профиль</button>
+        <button className="block w-full text-left px-4 py-2 hover:bg-gray-200" role="menuitem">Настройки</button>
+        <div className="border-t border-gray-200 my-1"></div>
+        <button className="block w-full text-left px-4 py-2 hover:bg-gray-200" role="menuitem" onClick={handleLogout}>Выйти</button>
       </Dropdown>
-
+      
     </div>
   );
 };
