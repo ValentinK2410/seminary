@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 import { Input } from "../../../componentLibrary/Input";
 import { useNavigate } from "react-router-dom";
 import "./RegisterModal.css";
-import RegisterButton from "./ReisterButton";
+import RegisterButton from "./RegisterButton";
 import { useAuth } from "../../../context/AuthContext";
 
 export const RegisterModal = ({
