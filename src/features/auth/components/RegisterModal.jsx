@@ -2,7 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { X } from "lucide-react";
 import { Input } from "../../../componentLibrary/Input";
+import { useNavigate } from "react-router-dom";
 import "./RegisterModal.css";
+import RegisterButton from "./ReisterButton";
+import { useAuth } from "../../../context/AuthContext";
 
 export const RegisterModal = ({
   isOpen,
@@ -19,9 +22,20 @@ export const RegisterModal = ({
   const modalRef = useRef(null);
   const [message, setMessage] = useState("");
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [closing, setClosing] = useState(false);
+  const navigate = useNavigate();
+  const {
+    user,
+    token,
+    loading,
+    error,
+    setUser,
+    setToken,
+    setLoading,
+    setError,
+  } = useAuth();
 
   // Обработка закрытия с анимацией
   const handleClose = () => {
@@ -59,29 +73,31 @@ export const RegisterModal = ({
 
   if (!isOpen && !isVisible) return null;
 
+  // Обработка изменений в полях ввода
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setUser((prevUser) => ({ ...prevUser, [name]: value }));
   };
-  
+
   const handleRegister = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    setLoading(true);
     setMessage("");
+    console.log("Submitting user data before request:", user); // Отладка перед отправкой
     try {
       const response = await axios.post(
         "https://api.russianseminary.org/api/register/",
-        formData
+        user
       );
-      console.log(response.data.message);
+      console.log("API response:", response.data);
+      if (response.data.user) {
+        setUser(user); // Обновляем user данными от сервера
+      } else {
+        setUser(user); // Сохраняем введённые данные, если API не возвращает user
+      }
+      setToken(response.data.token);
       setMessage(response.data.message || "Регистрация прошла успешно!");
       setRegistrationSuccess(true);
-      // Очистка формы после успешной регистрации
-      setFormData({
-        name: "",
-        email: "",
-        password: "",
-        password_confirmation: "",
-      });
       setTimeout(() => {
         setMessage("");
         setRegistrationSuccess(false);
@@ -90,41 +106,43 @@ export const RegisterModal = ({
         handleClose();
         if (onCloseComplete) onCloseComplete();
       }, 2000); // Должно совпадать с длительностью анимации
+    } catch (error) {
+      let errorMessage = "Произошла ошибка";
+      console.log(error);
+      if (error.response) {
+        const data =
+          error.response.data?.error ||
+          error.response.data?.errors ||
+          error.response.data;
 
-      } catch (error) {
-  let errorMessage = "Произошла ошибка";
-console.log(error)
-  if (error.response) {
-    const data = error.response.data?.error || error.response.data?.errors || error.response.data;
-
-     if (typeof data === "object" && data !== null) {
-       errorMessage = Object.entries(data)
-        .map(([key, value]) => {
-          if (Array.isArray(value)) {
-            return `${key}: ${value.join(", ")}`;
-          } else if (typeof value === "string") {
-            return `${key}: ${value}`;
-          } else {
-            return `${key}: ${JSON.stringify(value)}`;
-          }
-        })
-        .join(" | "); 
-    } else {
-      errorMessage = data?.message || data?.error || JSON.stringify(data);
-    }   
-  } else if (error.request) {
-    errorMessage = "Сервер не ответил. Проверьте подключение к интернету";
-  } else {
-    errorMessage = error.message;
-  }
-
-  setMessage(errorMessage);
-  setRegistrationSuccess(false);
-} finally {
-      setIsLoading(false);
+        if (typeof data === "object" && data !== null) {
+          errorMessage = Object.entries(data)
+            .map(([key, value]) => {
+              if (Array.isArray(value)) {
+                return `${key}: ${value.join(", ")}`;
+              } else if (typeof value === "string") {
+                return `${key}: ${value}`;
+              } else {
+                return `${key}: ${JSON.stringify(value)}`;
+              }
+            })
+            .join(" | ");
+        } else {
+          errorMessage = data?.message || data?.error || JSON.stringify(data);
+        }
+      } else if (error.request) {
+        errorMessage = "Сервер не ответил. Проверьте подключение к интернету";
+      } else {
+        errorMessage = error.message;
+      }
+      setError(errorMessage);
+      setMessage(errorMessage);
+      setRegistrationSuccess(false);
+    } finally {
+      setLoading(false);
     }
   };
-
+  console.log("Rendering with user:", user);
   return (
     <div
       className={`fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center transition-opacity ${
@@ -171,7 +189,7 @@ console.log(error)
             {/* Поле имени */}
             <div className="flex flex-col gap-2">
               <label
-                htmlFor="email"
+                htmlFor="text"
                 className="text-sm font-medium text-gray-700  text-left"
               >
                 Имя пользователя
@@ -181,7 +199,7 @@ console.log(error)
                 id="name"
                 name="name"
                 onChange={handleChange}
-                value={formData.name}
+                value={user?.name || ""}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 placeholder="Введите ваш имя"
                 required
@@ -200,7 +218,7 @@ console.log(error)
                 id="email"
                 name="email"
                 onChange={handleChange}
-                value={formData.email}
+                value={user?.email || ""}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 placeholder="Введите ваш email"
                 required
@@ -220,7 +238,7 @@ console.log(error)
                 id="password"
                 name="password"
                 onChange={handleChange}
-                value={formData.password}
+                value={user?.password || ""}
                 className=""
                 placeholder="Введите ваш пароль"
                 required
@@ -239,14 +257,14 @@ console.log(error)
                 id="password_confirmation"
                 name="password_confirmation"
                 onChange={handleChange}
-                value={formData.password_confirmation}
+                value={user?.password_confirmation || ""}
                 className=""
                 placeholder="Подтвердите пароль"
                 required
               />
             </div>
 
-            {message && (
+            {error && (
               <div
                 className={`text-sm p-2 rounded-md ${
                   registrationSuccess
@@ -254,46 +272,12 @@ console.log(error)
                     : "bg-red-100 text-red-500"
                 }`}
               >
-                {message}
+                {error}
               </div>
             )}
 
             {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={isLoading}
-              className={`flex items-center justify-center bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition ${
-                isLoading ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-            >
-              {isLoading ? (
-                <>
-                  <svg
-                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    ></circle>
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                    ></path>
-                  </svg>
-                  Обработка...
-                </>
-              ) : (
-                "Зарегистрироваться"
-              )}
-            </button>
+            <RegisterButton loading={isLoading} />
           </form>
         </div>
       </div>

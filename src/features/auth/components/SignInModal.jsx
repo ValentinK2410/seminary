@@ -1,21 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { X } from "lucide-react";
 import { Input } from "../../../componentLibrary/Input";
 import { RegisterModal } from "./RegisterModal";
+import { useAuth } from "../../../context/AuthContext";
 
 export const SignInModal = ({ isOpen, onClose }) => {
-  
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
 
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
+
+  const {
+    user,
+    token,
+    loading,
+    error,
+    setUser,
+    setToken,
+    setLoading,
+    setError,
+  } = useAuth();
 
   const openRegisterModal = () => {
     setRegisterModalOpen(true);
@@ -25,8 +31,11 @@ export const SignInModal = ({ isOpen, onClose }) => {
     setRegisterModalOpen(false);
   };
 
+ 
+  // Обработка изменений в полях ввода
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setUser((prevUser) => ({ ...prevUser, [name]: value }));
   };
 
   // Prevent rendering if modal is not open
@@ -40,15 +49,19 @@ export const SignInModal = ({ isOpen, onClose }) => {
       const response = await axios.post(
         "https://api.russianseminary.org/api/login",
         {
-          email: formData.email,
-          password: formData.password,
+          email: user.email,
+          password: user.password,
         }
       );
 
       // Save token and user name
       localStorage.setItem("authToken", response.data.token);
       localStorage.setItem("userName", response.data.user.name);
-
+      if (response.data.user) {
+        setUser({IsLogin:true}); // Обновляем user данными от сервера
+      } else {
+        setUser({IsLogin:true}); // Сохраняем введённые данные, если API не возвращает user
+      }
       setMessage(response?.data?.message || "Вы успешно вошли!");
       setLoginSuccess(true);
 
@@ -59,7 +72,8 @@ export const SignInModal = ({ isOpen, onClose }) => {
       }, 2000);
     } catch (error) {
       let errorMessage = "Ошибка входа";
-console.log("error", error)
+      setUser((user.isLoggedIn = false));
+      console.log("error", error);
       const data =
         error.response?.data?.error ||
         error.response?.data?.errors ||
@@ -68,8 +82,9 @@ console.log("error", error)
 
       if (typeof data === "object") {
         errorMessage = Object.entries(data)
-          .map(([key, value]) =>
-            `${key}: ${Array.isArray(value) ? value.join(", ") : value}`
+          .map(
+            ([key, value]) =>
+              `${key}: ${Array.isArray(value) ? value.join(", ") : value}`
           )
           .join(" | ");
       } else if (typeof data === "string") {
@@ -79,8 +94,7 @@ console.log("error", error)
       setMessage(`Ошибка: ${errorMessage}`);
       setLoginSuccess(false);
 
-      console.log("errorMessage", errorMessage)
-      
+      console.log("errorMessage", errorMessage);
     } finally {
       setIsLoading(false); // Ensures the loading spinner stops
     }
@@ -105,7 +119,10 @@ console.log("error", error)
           <form onSubmit={handleLogin} className="flex flex-col gap-4">
             {/* Email Input */}
             <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-gray-700"
+              >
                 Электронная почта
               </label>
               <Input
@@ -113,7 +130,7 @@ console.log("error", error)
                 id="email"
                 name="email"
                 onChange={handleChange}
-                value={formData.email}
+                value={user?.email || ""}
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 placeholder="Введите ваш email"
                 required
@@ -122,7 +139,10 @@ console.log("error", error)
 
             {/* Password Input */}
             <div className="flex flex-col gap-2">
-              <label htmlFor="password" className="text-sm font-medium text-gray-700">
+              <label
+                htmlFor="password"
+                className="text-sm font-medium text-gray-700"
+              >
                 Пароль
               </label>
               <Input
@@ -130,7 +150,7 @@ console.log("error", error)
                 id="password"
                 name="password"
                 onChange={handleChange}
-                value={formData.password}
+                value={user?.password || ""}
                 className=""
                 placeholder="Введите ваш пароль"
                 required

@@ -1,29 +1,34 @@
-import { useState, useCallback } from 'react';
-import { Logo } from '../../images/Logo';
-import { LogoText } from './components/LogoText';
-import { MainNav } from './components/MainNav';
-import { Menu, X } from 'lucide-react';
-import { CategoryMenuBtn } from './components/CategoryMenuBtn';
-import Search from '../../components/Search';
-import { SignInModal } from '../auth/components/SignInModal';
-import { UserMenu } from './components/UserMenu';
+import { useState, useCallback, useEffect } from "react";
+import axios from "axios";
+import { Logo } from "../../images/Logo";
+import { LogoText } from "./components/LogoText";
+import { MainNav } from "./components/MainNav";
+import { Menu, X } from "lucide-react";
+import { CategoryMenuBtn } from "./components/CategoryMenuBtn";
+import Search from "../../components/Search";
+import { SignInModal } from "../auth/components/SignInModal";
+import { UserMenu } from "./components/UserMenu";
+import { useAuth } from "../../context/AuthContext";
 
-import './Navigation.css';
-import { SecondaryButton } from '../../componentLibrary/SecondaryButton';
+import "./Navigation.css";
+import { SecondaryButton } from "../../componentLibrary/SecondaryButton";
 
 export const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = useCallback(() => setMenuOpen((prev) => !prev), []);
 
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(
-    localStorage.getItem("userName") ? true : false
-  );
+  const { user, setUser } = useAuth(); // Получаем user и token из контекста
 
   const openAuthModal = useCallback(() => setAuthModalOpen(true), []);
   const closeAuthModal = useCallback(() => setAuthModalOpen(false), []);
-  
 
+  useEffect(() => {
+    if (!user.IsLogin) {
+      user.IsLogin = false;
+    }
+  });
+  console.log("Navigation user", user);
   return (
     <section className="fixed w-full px-6 md:px-20 bg-blue-800 flex shadow z-50">
       <article className="max-w-7xl w-full mx-auto">
@@ -42,20 +47,22 @@ export const Navigation = () => {
               <MainNav onLinkClick={() => setMenuOpen(false)} />
             </article>
             <article className="flex gap-2">
-
               <UserMenu />
 
               <div className="parent_container w-full">
                 <Search />
               </div>
-             
-              <SecondaryButton
-                onClick={openAuthModal}
-                className="!py-1 px-3 h-full bg-slate-200 border-indigo-200"
-              >
+              {user.IsLogin ? (
+                <UserMenu />
+              ) : (
+                <SecondaryButton
+                  onClick={openAuthModal}
+                  className="!py-1 px-3 h-full bg-slate-200 border-indigo-200"
+                >
                   Вход
                 </SecondaryButton>
-       
+              )}
+
               {/* {!isLogin && (
                 <SecondaryButton
                   onClick={openAuthModal}
@@ -64,7 +71,7 @@ export const Navigation = () => {
                   Вход
                 </SecondaryButton>
               )} */}
-       
+
               {/* {isLogin && <DropdownMenu />} */}
 
               <div className="hamburger-btn w-fit border border-indigo-300 hover:bg-white rounded-md transition-colors duration-200 group">
@@ -80,7 +87,7 @@ export const Navigation = () => {
           </main>
           <div
             className={`side_menu_from_hamburger fixed top-0 right-0 h-full w-full max-w-sm bg-slate-700 shadow-lg z-50 transform transition-transform duration-300 ease-in-out 
-            ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+            ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
           >
             <button
               onClick={() => setMenuOpen(false)}
