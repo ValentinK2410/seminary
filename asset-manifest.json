@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/seminary/static/css/main.ccbb361f.css",
-    "main.js": "/seminary/static/js/main.3354cf52.js",
+    "main.css": "/seminary/static/css/main.c166b792.css",
+    "main.js": "/seminary/static/js/main.a66a648f.js",
     "static/media/mainPerson.png": "/seminary/static/media/mainPerson.a926b8d1d1c2f8feaa17.png",
     "static/media/lessonsforkids.png": "/seminary/static/media/lessonsforkids.138e3ffe6f0b58beecd1.png",
     "static/media/islam.jpg": "/seminary/static/media/islam.fee34ca78edb0d0dd2aa.jpg",
@@ -33,11 +33,11 @@
     "static/media/revicons.ttf": "/seminary/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/seminary/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/seminary/index.html",
-    "main.ccbb361f.css.map": "/seminary/static/css/main.ccbb361f.css.map",
-    "main.3354cf52.js.map": "/seminary/static/js/main.3354cf52.js.map"
+    "main.c166b792.css.map": "/seminary/static/css/main.c166b792.css.map",
+    "main.a66a648f.js.map": "/seminary/static/js/main.a66a648f.js.map"
   },
   "entrypoints": [
-    "static/css/main.ccbb361f.css",
-    "static/js/main.3354cf52.js"
+    "static/css/main.c166b792.css",
+    "static/js/main.a66a648f.js"
   ]
 }
