@@ -83,13 +83,11 @@ export const RegisterModal = ({
     e.preventDefault();
     setLoading(true);
     setMessage("");
-    console.log("Submitting user data before request:", user); // Отладка перед отправкой
     try {
       const response = await axios.post(
         "https://api.russianseminary.org/api/register/",
         user
       );
-      console.log("API response:", response.data);
       if (response.data.user) {
         setUser(user); // Обновляем user данными от сервера
       } else {
@@ -108,7 +106,6 @@ export const RegisterModal = ({
       }, 2000); // Должно совпадать с длительностью анимации
     } catch (error) {
       let errorMessage = "Произошла ошибка";
-      console.log(error);
       if (error.response) {
         const data =
           error.response.data?.error ||
@@ -141,8 +138,8 @@ export const RegisterModal = ({
     } finally {
       setLoading(false);
     }
+    return true;
   };
-  console.log("Rendering with user:", user);
   return (
     <div
       className={`fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center transition-opacity ${

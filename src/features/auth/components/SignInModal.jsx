@@ -31,7 +31,6 @@ export const SignInModal = ({ isOpen, onClose }) => {
     setRegisterModalOpen(false);
   };
 
- 
   // Обработка изменений в полях ввода
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -58,9 +57,9 @@ export const SignInModal = ({ isOpen, onClose }) => {
       localStorage.setItem("authToken", response.data.token);
       localStorage.setItem("userName", response.data.user.name);
       if (response.data.user) {
-        setUser({IsLogin:true}); // Обновляем user данными от сервера
+        setUser({ isLogin: true }); // Обновляем user данными от сервера
       } else {
-        setUser({IsLogin:true}); // Сохраняем введённые данные, если API не возвращает user
+        setUser({ isLogin: true }); // Сохраняем введённые данные, если API не возвращает user
       }
       setMessage(response?.data?.message || "Вы успешно вошли!");
       setLoginSuccess(true);
@@ -73,7 +72,6 @@ export const SignInModal = ({ isOpen, onClose }) => {
     } catch (error) {
       let errorMessage = "Ошибка входа";
       setUser((user.isLoggedIn = false));
-      console.log("error", error);
       const data =
         error.response?.data?.error ||
         error.response?.data?.errors ||
@@ -90,14 +88,12 @@ export const SignInModal = ({ isOpen, onClose }) => {
       } else if (typeof data === "string") {
         errorMessage = data;
       }
-
       setMessage(`Ошибка: ${errorMessage}`);
       setLoginSuccess(false);
-
-      console.log("errorMessage", errorMessage);
     } finally {
       setIsLoading(false); // Ensures the loading spinner stops
     }
+    return true;
   };
 
   return (
@@ -221,7 +217,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
           </form>
 
           {/* Sign Up Suggestion */}
-          <p className="text-sm text-gray-600 text-center">
+          <div className="text-sm text-gray-600 text-center">
             Нет аккаунта?{" "}
             <button
               onClick={openRegisterModal}
@@ -233,7 +229,7 @@ export const SignInModal = ({ isOpen, onClose }) => {
               isOpen={registerModalOpen}
               onClose={closeRegisterModal}
             />
-          </p>
+          </div>
         </div>
       </div>
     </div>

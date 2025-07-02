@@ -24,11 +24,10 @@ export const Navigation = () => {
   const closeAuthModal = useCallback(() => setAuthModalOpen(false), []);
 
   useEffect(() => {
-    if (!user.IsLogin) {
-      user.IsLogin = false;
+    if (!user.isLogin) {
+      user.isLogin = false;
     }
   });
-  console.log("Navigation user", user);
   return (
     <section className="fixed w-full px-6 md:px-20 bg-blue-800 flex shadow z-50">
       <article className="max-w-7xl w-full mx-auto">
@@ -52,7 +51,7 @@ export const Navigation = () => {
               <div className="parent_container w-full">
                 <Search />
               </div>
-              {user.IsLogin ? (
+              {user.isLogin ? (
                 <UserMenu />
               ) : (
                 <SecondaryButton

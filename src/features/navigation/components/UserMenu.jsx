@@ -30,8 +30,7 @@ export const UserMenu = () => {
 
   const handleLogout = async (e) => {
     e.preventDefault();
-    console.log("logout");
-    const token = localStorage.getItem("authToken");
+   const token = localStorage.getItem("authToken");
     try {
       const response = await axios.post(
         "https://api.russianseminary.org/api/logout/",
@@ -45,10 +44,8 @@ export const UserMenu = () => {
 
       localStorage.removeItem("authToken");
       clearAuth();
-      console.log(response.data);
     } catch (error) {
       clearAuth();
-      console.log("logout error", error);
       if (error.response) {
         setError(error.response.data.message);
       } else {
