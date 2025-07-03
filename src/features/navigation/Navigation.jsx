@@ -13,6 +13,7 @@ import { useAuth } from "../../context/AuthContext";
 import "./Navigation.css";
 import { SecondaryButton } from "../../componentLibrary/SecondaryButton";
 import './Navigation.css';
+ 
 import ThemeToggleButton from '../../componentLibrary/ThemeToggleButton';
 
 export const Navigation = () => {
@@ -55,16 +56,15 @@ export const Navigation = () => {
               {/* {user.isLogin ? ( */}
                 <UserMenu />
               {/* ) : ( */}
-                <SecondaryButton
-                  onClick={openAuthModal}
-                  className="!py-1 px-3 h-full bg-slate-200 border-indigo-200"
-                >
+             
+              <SecondaryButton
+                onClick={openAuthModal}
+                className="!py-1 px-3 h-full bg-slate-200 border-indigo-200"
+              >
                   Вход
-                </SecondaryButton>
-              {/* )} */}
-
+              </SecondaryButton>
               <ThemeToggleButton />
-            
+             
               <div className="hamburger-btn w-fit border border-indigo-300 hover:bg-white rounded-md transition-colors duration-200 group">
                 <button
                   className="w-fit px-2 py-1.5 self-end"
