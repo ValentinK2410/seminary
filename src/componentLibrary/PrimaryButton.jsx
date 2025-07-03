@@ -3,21 +3,25 @@ export const PrimaryButton = ({ onClick, children, className = '' }) => {
     <button
       className={`
         bg-blue-800 
+        dark:bg-blue-600 
         hover:bg-white 
+        dark:hover:bg-gray-200 
         text-white 
+        dark:text-gray-100 
         hover:text-blue-800 
+        dark:hover:text-blue-800 
         border 
-        border-blue-800
-        hover:border-blue-800
+        border-blue-800 
+        dark:border-blue-600 
+        hover:border-blue-800 
+        dark:hover:border-blue-800 
         rounded-lg 
-
         px-5 
         py-2.5 
-        text-lg
-        
+        text-lg 
         flex 
         items-center 
-        justify-center
+        justify-center 
         transition-colors 
         duration-200
         ${className}

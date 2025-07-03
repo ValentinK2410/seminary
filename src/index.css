@@ -8,6 +8,10 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  color-scheme: light dark;
+}
+
 body {
   scroll-behavior: smooth;
 }
