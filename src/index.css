@@ -24,3 +24,7 @@ img {
   background-size: cover;
   vertical-align: center;
 }
+
+button {
+  user-select: none;
+}
